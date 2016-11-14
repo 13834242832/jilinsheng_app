@@ -1,0 +1,124 @@
+<html>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000">
+    <title>My App</title>
+    <link rel="stylesheet" href="css/framework7.material.css">
+    <link rel="stylesheet" href="css/framework7.material.colors.css">
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/my-app.css">
+</head>
+<body>
+<div class="statusbar-overlay"></div>
+<div class="panel-overlay"></div>
+<div class="panel panel-left panel-cover">
+    <div class="view navbar-fixed">
+        <div class="pages">
+            <div data-page="panel-left" class="page">
+                <div class="navbar navbar-height">
+                    <div class="row">
+                        <div class="col-50"><img src=""></div>
+                        <p class="col-50"><span>登录</span>/<span>注册</span></p>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="list-block">
+                        <ul>
+                            <li><a href="index.html" class="item-link close-panel">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title">首页</div>
+                                    </div>
+                                </div></a></li>
+                            <li><a href="museum.html" class="item-link close-panel">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title">博物馆一览</div>
+                                    </div>
+                                </div></a></li>
+                            <li><a href="media-lists.html" class="item-link close-panel">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title">数字博物馆</div>
+                                    </div>
+                                </div></a></li>
+                            <li><a href="media-lists.html" class="item-link close-panel">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title">藏品鉴赏</div>
+                                    </div>
+                                </div></a></li>
+                            <li><a href="modals.html" class="item-link close-panel">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title">资讯</div>
+                                    </div>
+                                </div></a></li>
+                            <li><a href="bars.html" class="item-link close-panel">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title">一普数据</div>
+                                    </div>
+                                </div></a></li>
+                            <li><a href="popover.html" class="item-link close-panel">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title">历史吉林</div>
+                                    </div>
+                                </div></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="views">
+    <div class="view view-main row">
+        <div class="pages navbar-fixed">
+            <div data-page="index" class="page index">
+                <div class="content-block row">
+                    <p class="col-100 top1"><a href="museum.html"><img src="img/index/yl.png" width="100%" height="100%"></a></p>
+                    <p class="col-50 top2"><a href="museum.html"><img src="img/index/zx.png" width="100%" height="100%"></a></p>
+                    <p class="col-50 top2"><a href="museum.html"><img src="img/index/js.png" width="100%" height="100%"></a></p>
+                    <p class="col-50 top2"><a href="museum.html"><img src="img/index/wc.png" width="100%" height="100%"></a></p>
+                    <p class="col-50 top2"><a href="museum.html"><img src="img/index/sz.png" width="100%" height="100%"></a></p>
+                    <p class="col-50 top2"><a href="museum.html"><img src="img/index/yp.png" width="100%" height="100%"></a></p>
+                    <p class="col-50 top2"><a href="museum.html"><img src="img/index/ls.png" width="100%" height="100%"></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+<script>
+    $$('.open-left-panel').on('click', function (e) {
+        // 'left' position to open Left panel
+        myApp.openPanel('left');
+    });
+
+    $$('.open-right-panel').on('click', function (e) {
+        // 'right' position to open Right panel
+        myApp.openPanel('right');
+    });
+
+    $$('.panel-close').on('click', function (e) {
+        myApp.closePanel();
+    });
+
+</script>
+</body>
+</html>
