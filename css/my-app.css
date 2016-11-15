@@ -1,10 +1,11 @@
+/*首页样式*/
 .index{
     background:url("../img/index/bg.png") no-repeat;
     background-size:100% 100%;
 }
 .index .top1{
     height:30vh;
-    margin:0.5rem 0;
+    margin:0.7rem 0;
 }
 .index .top2{
     height:16vh;
@@ -14,18 +15,73 @@
     height:10vh;
 }
 .keygroup{
+    position:absolute;
     height:28px;
     text-align: center;
     border-bottom: 1px solid #eee;
+    top:56px;
+    background:#fff;
+    z-index: 1000;
 }
 .keygroup .key-common{
     line-height: 28px;
     border-right:1px solid #eee;
 }
-.dq{
+.search-pic{
+    background:url("../img/index/searchpic.png") no-repeat;
+    background-size:100% 100%;
+}
+.jb,.dq,.lb{
     display:none;
     margin:0;
+    background:#fff;
+    position:absolute;
+    left:0;
+    z-index:1000;
 }
-.dq.museum-active{
+.jb.museum-active,.dq.museum-active,.lb.museum-active{
     display:block;
  }
+/*博物馆一览*/
+.museum-list{
+    padding:0 20px;
+}
+.museum-list li{
+    height:330px;
+    padding:10px 0;
+}
+.museum-list h4{
+    margin:0;
+    font-weight:normal;
+    font-size:24px;
+}
+.museum-msg i{
+    display: inline-block;
+    position:relative;
+    top:7px;
+    width:11px;
+    height:20px;
+    background:url("../img/index/sj.png") 0px 0px no-repeat;
+}
+.museum-msg u{
+    display: inline-block;
+    color:#fff;
+    height: 20px;
+    font-size:12px;
+    text-decoration:none;
+    background:rgba(0,0,0,0.53);
+}
+.museum-dq,.museum-lb,.museum-jb{
+    position:absolute;
+    vertical-align:bottom;
+    right:0;
+}
+.museum-dq{
+    top:156px;
+}
+.museum-lb{
+    top:180px;
+}
+.museum-jb{
+    top:204px;
+}
