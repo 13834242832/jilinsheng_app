@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="309870a1-5b10-4b74-8f59-20f21d57b771" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/my-app.css" afterPath="$PROJECT_DIR$/css/my-app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/my-app.js" afterPath="$PROJECT_DIR$/js/my-app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/museum.html" afterPath="$PROJECT_DIR$/museum.html" />
+    <list default="true" id="309870a1-5b10-4b74-8f59-20f21d57b771" name="Default" comment="11-15博物馆一览列表">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/jilinsheng_app.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="jilinsheng_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -323,12 +321,20 @@
       <workItem from="1478824899382" duration="7282000" />
       <workItem from="1478841162843" duration="6668000" />
       <workItem from="1479086832774" duration="23415000" />
-      <workItem from="1479171664835" duration="30640000" />
+      <workItem from="1479171664835" duration="30753000" />
     </task>
+    <task id="LOCAL-00001" summary="11-15博物馆一览列表">
+      <created>1479207236695</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1479207236695</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75332000" />
+    <option name="totallyTimeSpent" value="75445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
