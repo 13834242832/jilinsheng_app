@@ -18,65 +18,112 @@
     <div class="view navbar-fixed">
         <div class="pages">
             <div data-page="panel-left" class="page">
-                <div class="navbar navbar-height">
-                    <div class="row">
-                        <div class="col-50"><img src=""></div>
-                        <p class="col-50"><span>登录</span>/<span>注册</span></p>
-                    </div>
-                </div>
-                <div class="page-content">
+                <!--<div class="navbar navbar-height">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-50"><img src=""></div>-->
+                        <!--<p class="col-50"><span>登录</span>/<span>注册</span></p>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="page-content panel_left">
                     <div class="list-block">
                         <ul>
                             <li><a href="index.html" class="item-link close-panel">
                                 <div class="item-content">
-                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-media"><i class="icons icon_index"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title">首页</div>
                                     </div>
                                 </div></a></li>
                             <li><a href="museum.html" class="item-link close-panel">
                                 <div class="item-content">
-                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-media"><i class="icons icon_museum"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title">博物馆一览</div>
                                     </div>
                                 </div></a></li>
                             <li><a href="media-lists.html" class="item-link close-panel">
                                 <div class="item-content">
-                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-media"><i class="icons icon_sz"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title">数字博物馆</div>
                                     </div>
                                 </div></a></li>
                             <li><a href="media-lists.html" class="item-link close-panel">
                                 <div class="item-content">
-                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-media"><i class="icons icon_js"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title">藏品鉴赏</div>
                                     </div>
                                 </div></a></li>
                             <li><a href="modals.html" class="item-link close-panel">
                                 <div class="item-content">
-                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-media"><i class="icons icon_wc"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title">文创产品</div>
+                                    </div>
+                                </div></a></li>
+                            <li><a href="modals.html" class="item-link close-panel">
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icons icon_zx"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title">资讯</div>
                                     </div>
                                 </div></a></li>
                             <li><a href="bars.html" class="item-link close-panel">
                                 <div class="item-content">
-                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-media"><i class="icons icon_yp"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title">一普数据</div>
                                     </div>
                                 </div></a></li>
                             <li><a href="popover.html" class="item-link close-panel">
                                 <div class="item-content">
-                                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                                    <div class="item-media"><i class="icons icon_ls"></i></div>
                                     <div class="item-inner">
                                         <div class="item-title">历史吉林</div>
                                     </div>
-                                </div></a></li>
+                                </div>
+                                </a>
+                            </li>
                         </ul>
+                    </div>
+                    <div class="list-block">
+                        <ul>
+                            <li class="user-bg" style="border-bottom:1px solid #1c1810">
+                                <a href="index.html" class="item-link close-panel">
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="icons icon_user"></i></div>
+                                        <div class="item-inner">
+                                            <div class="item-title">个人设置</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="user-bg" style="border-bottom:1px solid #1c1810">
+                                <a href="index.html" class="item-link close-panel">
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="icons icon_msg"></i></div>
+                                        <div class="item-inner">
+                                            <div class="item-title">意见反馈</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="user-bg">
+                                <a href="index.html" class="item-link close-panel">
+                                    <div class="item-content">
+                                        <div class="item-media"><i class="icons icon_out"></i></div>
+                                        <div class="item-inner">
+                                            <div class="item-title">退出登录</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="buttons-row no-gutter">
+                        <a href="#" class="button"><i class="icon-sao"></i><span>扫一扫</span></a>
+                        <a href="#" class="button" style="margin:0"><i class="icon-pic"></i><span>搜图</span></a>
                     </div>
                 </div>
             </div>
@@ -87,7 +134,11 @@
     <div class="view view-main row">
         <div class="pages navbar-fixed">
             <div data-page="index" class="page index">
-                <div class="content-block row">
+                <div class="toolbar toolbar-bottom">
+                    <button class="toolbar-inner button button-big search-pic" style="background-color:#ab9771">
+                    </button>
+                </div>
+                <div class="content-block row" style="margin:16px 0;">
                     <p class="col-100 top1"><a href="museum.html"><img src="img/index/yl.png" width="100%" height="100%"></a></p>
                     <p class="col-50 top2"><a href="museum.html"><img src="img/index/zx.png" width="100%" height="100%"></a></p>
                     <p class="col-50 top2"><a href="museum.html"><img src="img/index/js.png" width="100%" height="100%"></a></p>
@@ -96,13 +147,14 @@
                     <p class="col-50 top2"><a href="museum.html"><img src="img/index/yp.png" width="100%" height="100%"></a></p>
                     <p class="col-50 top2"><a href="museum.html"><img src="img/index/ls.png" width="100%" height="100%"></a></p>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
-
 <script type="text/javascript" src="js/framework7.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
 <script type="text/javascript" src="js/my-app.js"></script>
 <script>
     $$('.open-left-panel').on('click', function (e) {
