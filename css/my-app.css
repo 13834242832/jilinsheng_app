@@ -1,31 +1,284 @@
+ul,li,ol,h1,h2,h3,h4,h5,h6,dl,dt,dd,p,img{
+    margin:0px;
+    padding:0px;
+    list-style:none;
+    border:none;
+    font-weight: normal;
+}
+a{text-decoration:none;color:#666;}
+input{border:none;}
+.lf   {float:left;}
+.rt  {float:right;}
+.clear {clear:both;}
+img{vertical-align:top;}
+input:focus{
+    outline:none;
+}
+textarea:focus{
+    outline:none;
+}
+/*首页样式*/
+a{
+    color:#000;
+}
 .index{
     background:url("../img/index/bg.png") no-repeat;
     background-size:100% 100%;
 }
 .index .top1{
     height:30vh;
-    margin:0.5rem 0;
+    margin:0.7rem 0;
 }
 .index .top2{
     height:16vh;
     margin:0.5rem 0;
 }
-.navbar-height{
-    height:10vh;
+.navbar{
+    background:url("../img/index/nav-bar.png") no-repeat;
+    background-size:100% 100%;
 }
 .keygroup{
+    position:absolute;
     height:28px;
     text-align: center;
     border-bottom: 1px solid #eee;
+    top:56px;
+    background:#fff;
+    z-index: 1000;
 }
 .keygroup .key-common{
     line-height: 28px;
     border-right:1px solid #eee;
 }
-.dq{
+.search-pic{
+    background:url("../img/index/searchpic.png") no-repeat;
+    background-size:100% 100%;
+}
+.jb,.dq,.lb{
     display:none;
     margin:0;
+    background:#fff;
+    position:absolute;
+    left:0;
+    z-index:1000;
 }
-.dq.museum-active{
+.jb.museum-active,.dq.museum-active,.lb.museum-active{
     display:block;
- }
+}
+        .icons{
+            display:inline-block;
+            width:26px;
+            height:24px;
+        }
+.icon_index{
+    background:url("../img/index/icon.png") -25px 0 no-repeat;
+}
+.icon_museum{
+    background:url("../img/index/icon.png") -25px -23px no-repeat;
+}
+.icon_sz{
+    background:url("../img/index/icon.png") -25px -47px  no-repeat;
+}
+.icon_js{
+    background:url("../img/index/icon.png") -25px -70px no-repeat;
+}
+.icon_wc{
+    background:url("../img/index/icon.png") -25px -94px no-repeat;
+}
+.icon_zx{
+    background:url("../img/index/icon.png") -25px -120px no-repeat;
+}
+.icon_yp{
+    background:url("../img/index/icon.png") -25px -299px no-repeat;
+}
+.icon_ls{
+    background:url("../img/index/icon.png") -25px -146px no-repeat;
+}
+.icon_user{
+    background:url("../img/index/icon.png") -25px -172px no-repeat;
+}
+.icon_msg{
+    background:url("../img/index/icon.png") -25px -197px no-repeat;
+}
+.icon_out{
+    background:url("../img/index/icon.png") -25px -223px no-repeat;
+}
+.icon-sao{
+    display:inline-block;
+    width:25px;
+    height:25px;
+    position:relative;
+    top:4px;
+    color:#fff;
+    background:url("../img/index/icon.png") -25px -223px no-repeat;
+}
+.icon-pic{
+    display:inline-block;
+    width:25px;
+    height:25px;
+    position:relative;
+    top:4px;
+    color:#fff;
+    background:url("../img/index/icon.png") -25px -223px no-repeat;
+}
+.user-bg{
+    background:#2f2b1d;
+}
+.page-content{
+    background:#f2ebd9;
+}
+/*左侧边栏*/
+.panel_left{
+    background:url("../img/index/panel-left-bg.png") no-repeat;
+    background-size:100% 100%;
+    color:#fff;
+}
+/*博物馆一览*/
+.museum-list{
+}
+.museum-list li{
+    height:335px;
+    padding:0 20px;
+    margin:10px 0;
+    background:#fff;
+}
+.museum-list h4{
+    margin:0;
+    padding-top:5px;
+    font-weight:normal;
+    font-size:24px;
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;}
+/*博物馆一览*/
+.museum-list{
+    /*padding:0 20px;*/
+}
+.museum-list li{
+    height:330px;
+    padding:10px 20px;
+}
+.museum-list h4{
+    margin:0;
+    font-weight:normal;
+    font-size:24px;
+}
+.museum-msg i{
+    display: inline-block;
+    position:relative;
+    top:7px;
+    width:11px;
+    height:20px;
+    background:url("../img/index/sj.png") 0px 0px no-repeat;
+}
+.museum-msg u{
+    display: inline-block;
+    color:#fff;
+    height: 20px;
+    font-size:12px;
+    text-decoration:none;
+    background:rgba(0,0,0,0.53);
+}
+.museum-dq,.museum-lb,.museum-jb{
+    position:absolute;
+    vertical-align:bottom;
+    right:0;
+}
+.museum-dq{
+    top:90px;
+}
+.museum-lb{
+    top:114px;
+}
+.museum-jb{
+    top:138px;
+top:156px;
+}
+.museum-lb{
+    top:120px;
+}
+.museum-jb{
+    top:150px;
+}
+/*博物馆详情页*/
+.museum_img{
+    height:247px;
+}
+.icons_group ul{
+    overflow: hidden;
+    box-shadow:0 4px 4px 0 #e2dac8;
+}
+.icons_group li{
+    float:left;
+    border-right:1px solid #cfa972;
+    padding-top:22px;
+    background:#fff;
+}
+.icons_group li div{
+    width:62px;
+    height:62px;
+    margin:0 auto 10px;
+}
+.icons_group li:first-child div{
+    background:url("../img/museum_details_icons.png") no-repeat;
+}
+.icons_group li:nth-child(2) div{
+    background:url("../img/museum_details_icons.png") -62px 0px no-repeat;
+}
+.icons_group li:nth-child(3) div{
+    background:url("../img/museum_details_icons.png") -124px 0 no-repeat;
+}
+.icons_group li:nth-child(4) div{
+    background:url("../img/museum_details_icons.png") -186px 0 no-repeat;
+}
+.icons_group li p{
+    color:#0c0c0c;
+    font-size:18px;
+    padding-bottom: 14px;
+    text-align: center;
+}
+.museum_msg{
+    height:185px;
+    margin-top:10px;
+    background:#fff;
+    box-shadow:0 4px 4px 0 #e2dac8;
+
+}
+.museum_msg>p{
+    font-size:18px;
+    color:#0c0c0c;
+    height:50px;
+    border-bottom: 1px solid #cfa972;
+}
+.museum_msg>p span{
+    line-height:50px;
+    padding-left:10px;
+}
+.museum_msg>p i{
+    display:inline-block;
+    position:relative;
+    top:8px;
+    width:78px;
+    height:29px;
+    background:url("../img/museum_details_icons_0.png") no-repeat;
+}
+.museum_msg>div{
+    color:#a6a4a4;
+}
+.museum_msg>div div{
+    margin-bottom: 5px;
+}
+.guide{
+    margin-top:10px;
+    background:#fff;
+    box-shadow:0 4px 4px 0 #e2dac8;
+}
+.guide p{
+    margin: 0 auto;
+    font-size:14px;
+    height:63px;
+}
+.guide p span{
+    line-height:63px;
+}

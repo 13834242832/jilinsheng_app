@@ -92,7 +92,7 @@ myApp.onPageInit('museum', function (page) {
         }
         $.ajax({
             type:'GET',
-            url:"http://192.168.0.117:8080/X5.2.7_TJBWG/getMuseumList",
+            url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getMuseumList",
             dataType:"text",
             data:result,
             cache:true,
@@ -105,9 +105,9 @@ myApp.onPageInit('museum', function (page) {
                 var myList=myApp.virtualList($$('.virtual-list'),{
                     items:datas,
                     template:'<li class="col-100">'+
-                        '<a href="index.html">'+
+                        '<a href="museum_details.html?ID=123">'+
                             '<h4 class="col-100">{{FMuseumName}}</h4>'+
-                            '<p style="margin:9px 0">开放时间:<span>{{FClockBTime}}</span>-<span>{{FClockETime}}</span></p>'+
+                            '<p style="margin:0">开放时间:<span>{{FClockBTime}}</span>-<span>{{FClockETime}}</span></p>'+
                             '<div style="position: relative">'+
                             '<img src="img/index/pic.png" width="100%" height="247px">'+
                             '<span class="museum-msg museum-dq"><i></i><u>{{FCity}}</u></span>'+
@@ -116,7 +116,7 @@ myApp.onPageInit('museum', function (page) {
                             '</div>'+
                         '</a>'+
                 '</li>',
-                    height:345
+                    height:340
                 });
             },
             complete:function(){
@@ -126,4 +126,10 @@ myApp.onPageInit('museum', function (page) {
     }
 
 
+});
+myApp.onPageInit('museum_details', function (page) {
+    var mySwiper = myApp.swiper('.swiper-container', {
+        pagination:'.swiper-pagination'
+    });
+    // console.log(page.query.ID);
 });
