@@ -232,10 +232,13 @@ top:156px;
 .icons_group li:nth-child(4) div{
     background:url("../img/museum_details_icons.png") -186px 0 no-repeat;
 }
+.icons_group li:nth-child(5) div{
+    background:url("../img/museum_details_icons.png") -246px 0 no-repeat;
+}
 .icons_group li p{
     color:#0c0c0c;
     font-size:18px;
-    padding-bottom: 14px;
+    padding-bottom:6px;
     text-align: center;
 }
 .museum_msg{
@@ -245,17 +248,17 @@ top:156px;
     box-shadow:0 4px 4px 0 #e2dac8;
 
 }
-.museum_msg>p{
+.museum_msg a>p{
     font-size:18px;
     color:#0c0c0c;
     height:50px;
     border-bottom: 1px solid #cfa972;
 }
-.museum_msg>p span{
+.museum_msg a>p span{
     line-height:50px;
     padding-left:10px;
 }
-.museum_msg>p i{
+.museum_msg a>p i{
     display:inline-block;
     position:relative;
     top:8px;
@@ -274,11 +277,74 @@ top:156px;
     background:#fff;
     box-shadow:0 4px 4px 0 #e2dac8;
 }
-.guide p{
+.guide a p{
     margin: 0 auto;
-    font-size:14px;
+    font-size:15px;
     height:63px;
 }
-.guide p span{
+.guide a p span{
     line-height:63px;
+}
+.museum_xn{
+    height:331px;
+}
+.museum_xn h4{
+    color:#464544;
+    margin-top:10px;
+    font-size:18px;
+}
+.museum_xn div p{
+    font-size:16px;
+    color:#a6a4a4;
+}
+.museum_zx{
+    height:auto;
+}
+.museum_zx ul li{
+    border-bottom: 1px solid #cfa972;
+}
+.museum_zx ul li p{
+    font-size:16px;
+    color:#464544;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.museum_zx ul li h5{
+    color:#a6a4a4;
+    font-size:16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*数字博物馆*/
+.digitization_list{
+    margin-top: 10px;
+    background:#fff;
+    padding:14px 20px 0;
+}
+.digitization_list ul li{
+    padding:14px 10px 0;
+    border-bottom:1px solid rgba(0, 0, 0, 0.12); ;
+}
+.digitization_list ul li h5{
+    font-weight: normal;
+    font-size:16px;
+}
+.digitization_list ul li p{
+    font-size:14px;
+    color:#a6a4a4;
+}
+.digitization_list ul li p span{
+    color:#876130;
+}
+/*实用信息*/
+.museum_usefultabbar .toolbar-inner .tab-link{
+    color:#6b5b3f;
+    border-right:1px solid #f2ecd9;
+}
+a.tab-link.active{
+    background:#6b5b3f;
+    color:#fff;
+    border:none;
 }
