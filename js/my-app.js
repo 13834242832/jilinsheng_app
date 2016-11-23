@@ -93,7 +93,7 @@ myApp.onPageInit('museum', function (page) {
         }
         $.ajax({
             type:'POST',
-            url:"http://192.168.0.117:8083/X5.2.7_TJBWG/getMuseumList?meth=getMuseumList",
+            url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getMuseumList?meth=getMuseumList",
             dataType:"text",
             data:result,
             cache:true,
