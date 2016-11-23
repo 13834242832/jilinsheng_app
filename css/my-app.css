@@ -17,6 +17,9 @@ input:focus{
 textarea:focus{
     outline:none;
 }
+body{
+    font-family:方正兰亭黑简体;
+}
 /*首页样式*/
 a{
     color:#000;
@@ -36,6 +39,9 @@ a{
 .navbar{
     background:url("../img/index/nav-bar.png") no-repeat;
     background-size:100% 100%;
+}
+.navbar .navbar-inner .center{
+    font-size:24px;
 }
 .keygroup{
     position:absolute;
@@ -135,6 +141,7 @@ a{
 }
 /*博物馆一览*/
 .museum-list{
+
 }
 .museum-list li{
     height:335px;
@@ -162,7 +169,7 @@ a{
 .museum-list h4{
     margin:0;
     font-weight:normal;
-    font-size:24px;
+    font-size:20px;
 }
 .museum-msg i{
     display: inline-block;
@@ -281,6 +288,9 @@ top:156px;
     margin: 0 auto;
     font-size:15px;
     height:63px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .guide a p span{
     line-height:63px;
@@ -292,10 +302,16 @@ top:156px;
     color:#464544;
     margin-top:10px;
     font-size:18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .museum_xn div p{
     font-size:16px;
     color:#a6a4a4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .museum_zx{
     height:auto;
@@ -324,7 +340,7 @@ top:156px;
     padding:14px 20px 0;
 }
 .digitization_list ul li{
-    padding:14px 10px 0;
+    padding:14px 10px 10px;
     border-bottom:1px solid rgba(0, 0, 0, 0.12); ;
 }
 .digitization_list ul li h5{
@@ -347,4 +363,25 @@ a.tab-link.active{
     background:#6b5b3f;
     color:#fff;
     border:none;
+}
+/*馆藏精品*/
+.museum_collection div ul li{
+    border-bottom: 1px solid rgba(0,0,0,.25);
+}
+.museum_collection div ul li h3,.museum_collection div ul li p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top:10px;
+}
+.museum_collection div ul li h3{
+    font-size:16px;
+}
+.museum_collection div ul li p{
+    font-size:14px;
+    color:#a6a6a6;
+}
+.museum_collection>div{
+
+    background:#fff;
 }

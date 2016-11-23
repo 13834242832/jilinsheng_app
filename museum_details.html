@@ -1,8 +1,8 @@
-<div data-page="museum_details" class="page">
+<div data-page="museum_details" class="page cached" id="museum_details">
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left col-25"><a href="#" class="back link icon-only"><i class="icon icon-back"></i></a></div>
-            <div class="center col-50" style='text-align: center'>吉林省博物院</div>
+            <div class="center col-50" style='text-align: center' v-text="data.FMuseumName"></div>
             <div class="right"><a href="museum_search.html" class="link icon-only"><i class="material-icons">search</i></a></div>
         </div>
     </div>
@@ -10,14 +10,11 @@
         <button class="toolbar-inner button button-big" style="background-color:#ab9771;font-size:22px">预约
         </button>
     </div>
-    <div class="page-content" id="museum_details" style="padding:56px 0 0">
+    <div class="page-content" style="padding:56px 0 0">
         <div class="museum_img">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="img/museum_details_banner.png" width="100%" height="247px"></div>
-                    <div class="swiper-slide"><img src="img/museum_details_banner.png" width="100%" height="247px"></div>
-                    <div class="swiper-slide"><img src="img/museum_details_banner.png" width="100%" height="247px"></div>
-                    <div class="swiper-slide"><img src="img/museum_details_banner.png" width="100%" height="247px"></div>
+                    <div class="swiper-slide" v-for="item in data.photo"><img v-bind:src="item" width="100%" height="247px"></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -25,21 +22,24 @@
         <div class="icons_group">
             <ul class="row no-gutter">
                 <li class="col-20">
-                    <a href="">
+                    <a v-bind:href="url1+data.MID">
                         <div></div>
                         <p>馆藏精品</p>
                     </a>
-                </li><li class="col-20">
+                </li>
+                <li class="col-20">
                     <a href="">
                         <div></div>
                         <p>文创产品</p>
                     </a>
-                </li><li class="col-20">
+                </li>
+                <li class="col-20">
                     <a href="">
                         <div></div>
                         <p>普查文物</p>
                     </a>
-                </li><li  class="col-20">
+                </li>
+                <li  class="col-20">
                     <a href="">
                         <div></div>
                         <p>资讯学术</p>
@@ -54,43 +54,43 @@
             </ul>
         </div>
         <div class="row museum_msg">
-            <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>基本信息与简介</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
+            <a href="museum_brief.html" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>基本信息与简介</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
             <div style="padding:0 1.5rem;" class="col-100 row no-gutter">
-                <div class="col-100 row"><p class="col-50">级别：<span>一级博物馆</span></p><p class="col-50">类别：<span>国有博物馆</span></p></div>
-                <div class="col-100 row"><p class="col-50">地区：<span>吉林省长春市</span></p><p class="col-50">门票：<span>免费</span></p></div>
-                <div class="col-100"><p>地址：<span>吉林省长春市中山大道15号</span></p></div>
-                <div class="col-100"><p>开放时间：<span>周二至周六</span></p></div>
+                <div class="col-100 row"><p class="col-50">级别：<span v-text="data.FMLevel"></span></p><p class="col-50">类别：<span v-text="data.FMType"></span></p></div>
+                <div class="col-100 row"><p class="col-50">地区：<span v-text="data.DQ"></span></p><p class="col-50">门票：<span>免费</span></p></div>
+                <div class="col-100"><p>地址：<span v-text="data.FDetailAddress"></span></p></div>
+                <div class="col-100"><p>开放时间：<span v-text="data.Opentime"></span></p></div>
             </div>
         </div>
         <div class="guide row">
-            <a href="museum_useful.html?ID=123" class="row col-100"><p class="col-80"><span>实用信息：参观指南、预约须知、服务设施... </span></p><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:relative;right:10px;top:20px"></i></a>
+            <a v-bind:href="url2+data.MID" class="row col-100"><p class="col-80"><span>实用信息：参观指南、预约须知、服务设施... </span></p><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:relative;right:10px;top:20px"></i></a>
         </div>
         <div class="row museum_msg museum_xn">
             <a href="" class="row col-100"><p class="col-100"><i></i><span>虚拟展厅</span></p></a>
             <div class="col-100 row" style="padding:14px 20px 0 20px">
-                <div class="col-50">
-                    <img src="img/大安市渔猎馆.png" width="100%" height="180px">
-                    <h4>大安市</h4>
-                    <p><span>全景漫游</span><span style="margin-left:15px;">评分：4.5</span></p>
+                <div class="col-50" v-for="item in data.mdetailsVR">
+                    <img :src="item.xnms_img_ur" width="100%" height="180px">
+                    <h4 v-text="item.name"></h4>
+                    <p><span v-text="item.FStyle"></span><span style="margin-left:15px;" v-html="'评分：'+item.FScore"></span></p>
                 </div>
-                <div class="col-50">
-                    <img src="img/红色印记.png"width="100%" height="180px">
-                    <h4>红色印记</h4>
-                    <p><span>全景漫游</span><span style="margin-left:15px;">评分：4.5</span></p>
-                </div>
+                <!--<div class="col-50">-->
+                    <!--<img src="img/红色印记.png"width="100%" height="180px">-->
+                    <!--<h4>红色印记</h4>-->
+                    <!--<p><span>全景漫游</span><span style="margin-left:15px;">评分：4.5</span></p>-->
+                <!--</div>-->
             </div>
         </div>
         <div class="row museum_msg museum_zx">
             <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>展讯</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
             <ul class="col-100"  style="padding:0 0 0 20px">
                 <li class="row no-gutter" style="padding:14px 0">
-                    <a href="" class="col-100 row">
+                    <a class="col-100 row">
                     <div class="col-55" style="padding-top:20px;">
-                        <p>王羲之书画展</p>
-                        <p>展期：16年3月-6月</p>
-                        <h5><span>吉林省博物院</span><span style="padding-left:10px">历史吉林3F展厅</span></h5>
+                        <p></p>
+                        <p>展期：</p>
+                        <h5><span>吉林省博物院</span><span style="padding-left:10px" ></span></h5>
                     </div>
-                    <div class="col-45"><img src="img/图.png" width="100%" height="116px"></div>
+                    <div class="col-45"><img width="100%" height="116px"></div>
                     </a>
                 </li>
                 <li class="row no-gutter" style="padding:14px 0">
