@@ -11,12 +11,36 @@
     <link rel="stylesheet" href="css/material-icons.css">
     <link rel="stylesheet" href="css/my-app.css">
     <script src="js/vue.js"></script>
+    <script>
+//        (function(doc, win) {
+//            var docEl = doc.documentElement, resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize', recalc = function() {
+//                var w = docEl.clientWidth;
+//                var h = docEl.clientHeight;
+//                if (!w)
+//                    return;
+//                if (w <= h || /iphone|ipod|android.*mobile|windows.*phone|blackberry.*mobile/i.test(window.navigator.userAgent.toLowerCase())) {
+//                    docEl.style.fontSize = 100 * (w / 320.0) + 'px';
+//                } else {
+//                    var w2 = h / 480 * 320;
+//                    docEl.style.fontSize = 100 * (w2 / 320.0) + 'px';
+//                    docEl.style.width = w2 + 'px';
+//                    docEl.style['margin'] = '0 ' +(w - w2) / 2 + 'px';
+//                }
+//            };
+//
+//            if (!doc.addEventListener)
+//                return;
+//            win.addEventListener(resizeEvt, recalc, false);
+//            doc.addEventListener('DOMContentLoaded', recalc, false);
+//            recalc();
+//        })(document, window);
+    </script>
 </head>
 <body>
 <div class="statusbar-overlay"></div>
 <div class="panel-overlay"></div>
 <div class="panel panel-left panel-cover">
-    <div class="view navbar-fixed">
+    <div class="navbar-fixed">
         <div class="pages">
             <div data-page="panel-left" class="page">
                 <!--<div class="navbar navbar-height">-->
@@ -49,7 +73,7 @@
                                         <div class="item-title">数字博物馆</div>
                                     </div>
                                 </div></a></li>
-                            <li><a href="media-lists.html" class="item-link close-panel">
+                            <li><a href="appreciate.html" class="item-link close-panel">
                                 <div class="item-content">
                                     <div class="item-media"><i class="icons icon_js"></i></div>
                                     <div class="item-inner">
@@ -142,7 +166,7 @@
                 <div class="content-block row" style="margin:16px 0;">
                     <p class="col-100 top1"><a href="museum.html"><img src="img/index/yl.png" width="100%" height="100%"></a></p>
                     <p class="col-50 top2"><a href="digitization.html"><img src="img/index/zx.png" width="100%" height="100%"></a></p>
-                    <p class="col-50 top2"><a href="museum.html"><img src="img/index/js.png" width="100%" height="100%"></a></p>
+                    <p class="col-50 top2"><a href="appreciate.html"><img src="img/index/js.png" width="100%" height="100%"></a></p>
                     <p class="col-50 top2"><a href="museum.html"><img src="img/index/wc.png" width="100%" height="100%"></a></p>
                     <p class="col-50 top2"><a href="digitization.html"><img src="img/index/sz.png" width="100%" height="100%"></a></p>
                     <p class="col-50 top2"><a href="museum.html"><img src="img/index/yp.png" width="100%" height="100%"></a></p>

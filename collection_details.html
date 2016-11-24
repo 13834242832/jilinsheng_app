@@ -1,0 +1,45 @@
+<div data-page="collection_details" class="page cached" id="collection_details">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left col-25"><a href="#" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+            <div class="center col-50" style='text-align: center' v-text="data.FMuseumName"></div>
+            <div class="right"><a href="museum_search.html" class="link icon-only"><i class="material-icons">search</i></a></div>
+        </div>
+    </div>
+    <div class="page-content" style="padding:56px 0 0">
+        <div class="museum_img">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="item in data.photo"><img src="img/banner2.png" width="100%"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="row museum_msg">
+            <a href="museum_brief.html" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>简介</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
+            <div style="padding:0 1.5rem;" class="col-100 row no-gutter">
+
+            </div>
+        </div>
+        <div class="row museum_msg museum_xn">
+            <a href="" class="row col-100"><p class="col-100"><i></i><span>虚拟展厅</span></p></a>
+            <div class="col-100 row" style="padding:14px 20px 0 20px">
+            </div>
+        </div>
+        <div class="row museum_msg museum_zx">
+            <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>展讯</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
+            <ul class="col-100"  style="padding:0 0 0 20px">
+                <li class="row no-gutter" style="padding:14px 0" v-for="item in data.text_academic">
+                    <a class="col-100 row">
+                        <div class="col-55" style="padding-top:20px;">
+                            <p v-text="item.name"></p>
+                            <p v-html="'展期'+item.FExhibitionBTime "></p>
+                            <h5><span></span><span v-text="item.FPlace"></span></h5>
+                        </div>
+                        <div class="col-45"><img width="100%" height="116px" :src="item.FContentCover"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

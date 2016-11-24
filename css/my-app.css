@@ -337,7 +337,7 @@ top:156px;
 .digitization_list{
     margin-top: 10px;
     background:#fff;
-    padding:14px 20px 0;
+    padding:0px 20px 0;
 }
 .digitization_list ul li{
     padding:14px 10px 10px;
@@ -382,6 +382,34 @@ a.tab-link.active{
     color:#a6a6a6;
 }
 .museum_collection>div{
-
     background:#fff;
+}
+/*藏品鉴赏*/
+.picsearch{
+    margin-top:10px;
+    background:#fff;
+    box-shadow:0 4px 4px 0 #e2dac8;
+}
+.picsearch a p{
+    padding-left:10px;
+    font-size:15px;
+    height:63px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.picsearch a p span{
+    line-height:63px;
+    color:#0d0d0d;
+    font-size:18px;
+}
+.picsearch a p small{
+    padding-left:22px;
+    color:#999;
+    font-size:16px;
+}
+.picsearch a p img{
+    margin-top:11px;
+    width:40px;
+    height:40px;
 }
