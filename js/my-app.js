@@ -145,22 +145,6 @@ myApp.onPageInit('museum_details', function (page) {
         success:function(json){
             var datas=eval("("+json+")");
             console.log(datas);
-            // var myList=myApp.virtualList($$('.virtual-list'),{
-            //     items:datas,
-            //     template:'<li class="col-100">'+
-            //     '<a href="museum_details.html?ID={{MID}}">'+
-            //     '<h4 class="col-100">{{FMuseumName}}</h4>'+
-            //     '<p style="margin:0">开放时间:<span>{{KFSJ}}</span></p>'+
-            //     '<div style="position: relative">'+
-            //     '<img src="{{PicPhoto1}}" width="100%" height="247px">'+
-            //     '<span class="museum-msg museum-dq"><i></i><u>{{FProvince}}</u></span>'+
-            //     '<span class="museum-msg museum-lb"><i></i><u>{{FMType}}</u></span>'+
-            //     '<span class="museum-msg museum-jb"><i></i><u>{{FMLevel}}</u></span>'+
-            //     '</div>'+
-            //     '</a>'+
-            //     '</li>',
-            //     height:340
-            // });
             var myList=new Vue({
                 el:"#museum_details",
                 data:{
@@ -222,18 +206,18 @@ myApp.onPageInit('museum_collection', function (page) {
 })
 myApp.onPageInit('digitization', function (page) {
     var result={"meth":"DigitalMuseum"};
-    $.ajax({
-        type:'POST',
-        url:"http://192.168.0.117:8083/X5.2.7_TJBWG/getDigitalMuseum",
-        dataType:"text",
-        data:result,
-        cache:true,
-        beforeSend:function(){
-            layer.load(2,{shade: [0.3,'#000']});
-        },
-        success:function(json){
-            var datas=eval("("+json+")");
-            console.log(datas);
+    // $.ajax({
+    //     type:'POST',
+    //     url:"http://192.168.0.117:8083/X5.2.7_TJBWG/getDigitalMuseum",
+    //     dataType:"text",
+    //     data:result,
+    //     cache:true,
+    //     beforeSend:function(){
+    //         layer.load(2,{shade: [0.3,'#000']});
+    //     },
+    //     success:function(json){
+    //         var datas=eval("("+json+")");
+    //         console.log(datas);
             // var myList=myApp.virtualList($$('.virtual-list'),{
             //     items:datas,
             //     template:'<li class="col-100">'+
@@ -258,11 +242,11 @@ myApp.onPageInit('digitization', function (page) {
             //         url2:"museum_useful.html?ID="
             //     },
             // })
-        },
-        complete:function(){
-            layer.closeAll('loading');
-        }
-    })
+    //     },
+    //     complete:function(){
+    //         layer.closeAll('loading');
+    //     }
+    // })
 })
 
 myApp.onPageInit('digitization_more', function (page) {

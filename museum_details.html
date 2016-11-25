@@ -6,11 +6,15 @@
             <div class="right"><a href="museum_search.html" class="link icon-only"><i class="material-icons">search</i></a></div>
         </div>
     </div>
+    <div class="toolbar toolbar-bottom">
+        <button class="toolbar-inner button button-big" style="background-color:#ab9771;font-size:22px">预约
+        </button>
+    </div>
     <div class="page-content" style="padding:56px 0 0">
         <div class="museum_img">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="item in data.photo"><img src="item" width="100%" height="247px"></div>
+                    <div class="swiper-slide" v-for="item in data.photo"><img :src="item" width="100%" height="247px"></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -57,6 +61,9 @@
                 <div class="col-100"><p>地址：<span v-text="data.FDetailAddress"></span></p></div>
                 <div class="col-100"><p>开放时间：<span v-text="data.Opentime"></span></p></div>
             </div>
+        </div>
+        <div class="guide row">
+            <a href="museum_useful.html?ID=123" class="row col-100"><p class="col-80"><span>实用信息：参观指南、预约须知、服务设施... </span></p><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:relative;right:10px;top:20px"></i></a>
         </div>
         <div class="row museum_msg museum_xn">
             <a href="" class="row col-100"><p class="col-100"><i></i><span>虚拟展厅</span></p></a>
