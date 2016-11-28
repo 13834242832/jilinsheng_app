@@ -1,45 +1,81 @@
 <div data-page="collection_details" class="page cached" id="collection_details">
-    <div class="navbar">
+    <div class="navbar" style="height:0.435rem">
         <div class="navbar-inner">
-            <div class="left col-25"><a href="#" class="back link icon-only"><i class="icon icon-back"></i></a></div>
-            <div class="center col-50" style='text-align: center' v-text="data.FMuseumName"></div>
-            <div class="right"><a href="museum_search.html" class="link icon-only"><i class="material-icons">search</i></a></div>
+            <div class="left col-25"><a href="#" class="back link icon-only" style="font-size:0.16rem"><i class="icon icon-back"></i></a></div>
+            <div class="center col-50" style='text-align: center'>红山文化玉龙</div>
+            <div class="right"><a href="museum_search.html" class="link icon-only"><i class="material-icons" style="font-size:0.16rem">search</i></a></div>
         </div>
     </div>
-    <div class="page-content" style="padding:56px 0 0">
-        <div class="museum_img">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="item in data.photo"><img src="img/banner2.png" width="100%"></div>
+    <div class="toolbar toolbar-bottom" style="background:#fff;height:0.293rem;border:1px solid #c3aa83;overflow: hidden">
+        <button class="button" style="float:left; width:1.644rem;height:100%;background:#c3aa83;font-size:0.098rem;color:#fff">查看三维模型</button>
+        <button class="button" style="float:left;width:0.77rem;height:100%;border-right:1px solid #c3aa83;font-size:0.098rem;color:#d2d2d2">上一个</button>
+        <button class="button" style="float:left;width:0.77rem;height:100%;font-size:0.098rem;color:#d2d2d2">
+            <i style="display:inline-block;width:0.089rem;height:0.1244rem;position:relative;left:0;top:0.04rem">
+                <img src="img/藏品详情页图标.png">
+            </i><span>下一个</span></button>
+    </div>
+    <div class="page-content" style="padding:0.435rem 0 0.3rem 0">
+        <div class="museum_img" style="height:1.92rem;position:relative">
+            <img src="img/红山.png" width="100%" height="100%">
+            <p style="height:0.27rem;width:100%;background:rgba(0,0,0,0.5);text-align: center;color:#fff;position:absolute;left:0;bottom:0;font-size:0.098rem"><span style="line-height:0.27rem">红山文化玉龙</span></p>
+            <i style="display:inline-block;width:0.4rem;height:0.231rem;position:absolute;left:0.187rem;top:0.102rem;">
+            </i>
+        </div>
+        <div class="row museum_msg" style="height:auto">
+            <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>基本信息</span></p></a>
+            <div class="col-100 row no-gutter" style="font-size:0.08rem;padding:0.089rem 0 0.116rem 0.45rem">
+                <table class="col-100" style="font-size:0.08rem;color:#a6a4a4">
+                    <tbody>
+                        <tr>
+                            <td style="padding-bottom:0.088rem">类别：<span>玉石器</span></td>
+                            <td style="padding-bottom:0.088rem">级别：<span>一级</span></td>
+                        </tr>
+                    <tr>
+                        <td style="padding-bottom:0.088rem">朝代：<span>唐代</span></td>
+                        <td style="padding-bottom:0.088rem">尺寸：<span>12*13*11cm</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>收藏单位：<span>吉林省博物院</span></p>
+            </div>
+        </div>
+        <div class="row museum_msg" style="height:auto">
+            <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>藏品简介</span></p></a>
+            <div class="col-100 row no-gutter" style="font-size:0.08rem;padding:0.089rem 0 0.116rem 0.45rem">
+                <p>吉林省博物院，原名吉林省博物馆，1951年经吉林省人民政府批准建立，1952年在松花江畔的吉林市正式开放，1954年，随省政府迁至长春市。现位于长春市净月国家高新技术产业开发区永顺路1666号，建筑面积3.2万平方米，是直属于吉林省文化厅的国家一级博物馆。</p>
+            </div>
+        </div>
+        <div class="row museum_msg" style="height:auto">
+            <a href="" class="row col-100"><p class="col-100"><i></i><span>评论</span></p></a>
+            <div class="col-100 row no-gutter">
+                <div class="col-100 row no-gutter" style="padding:0 0.089rem;border-bottom:1px solid #c5af79">
+                    <div class="col-100" style="margin:0.045rem 0 0.045rem 0.33rem">
+                        <p style="font-size:0.089rem;color:#404040;">今夕无痕</p>
+                        <p style="font-size:0.08rem">视觉效果非常的震撼！</p>
+                    </div>
+                </div><div class="col-100 row no-gutter" style="padding:0 0.089rem;border-bottom:1px solid #c5af79">
+                    <div class="col-100" style="margin:0.045rem 0 0.045rem 0.33rem">
+                        <p style="font-size:0.089rem;color:#404040;">今夕无痕</p>
+                        <p style="font-size:0.08rem">视觉效果非常的震撼！</p>
+                    </div>
+                </div><div class="col-100 row no-gutter" style="padding:0 0.089rem;border-bottom:1px solid #c5af79">
+                    <div class="col-100" style="margin:0.045rem 0 0.045rem 0.33rem">
+                        <p style="font-size:0.089rem;color:#404040;">今夕无痕</p>
+                        <p style="font-size:0.08rem">视觉效果非常的震撼！</p>
+                    </div>
+                </div><div class="col-100 row no-gutter" style="padding:0 0.089rem;border-bottom:1px solid #c5af79">
+                    <div class="col-100" style="margin:0.045rem 0 0.045rem 0.33rem">
+                        <p style="font-size:0.089rem;color:#404040;">今夕无痕</p>
+                        <p style="font-size:0.08rem">视觉效果非常的震撼！</p>
+                    </div>
+                </div><div class="col-100 row no-gutter" style="padding:0 0.089rem;border-bottom:1px solid #c5af79">
+                    <div class="col-100" style="margin:0.045rem 0 0.045rem 0.33rem">
+                        <p style="font-size:0.089rem;color:#404040;">今夕无痕</p>
+                        <p style="font-size:0.08rem">视觉效果非常的震撼！</p>
+                    </div>
                 </div>
-                <div class="swiper-pagination"></div>
+                <div class="col-100" style="height:0.222rem;text-align: center;background:#ab9771;color:#fff;"><a style="line-height: 0.222rem;color:#fff; font-size:0.098rem;">查看全部12313条评论</a></div>
             </div>
-        </div>
-        <div class="row museum_msg">
-            <a href="museum_brief.html" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>简介</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
-            <div style="padding:0 1.5rem;" class="col-100 row no-gutter">
-
-            </div>
-        </div>
-        <div class="row museum_msg museum_xn">
-            <a href="" class="row col-100"><p class="col-100"><i></i><span>虚拟展厅</span></p></a>
-            <div class="col-100 row" style="padding:14px 20px 0 20px">
-            </div>
-        </div>
-        <div class="row museum_msg museum_zx">
-            <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>展讯</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
-            <ul class="col-100"  style="padding:0 0 0 20px">
-                <li class="row no-gutter" style="padding:14px 0" v-for="item in data.text_academic">
-                    <a class="col-100 row">
-                        <div class="col-55" style="padding-top:20px;">
-                            <p v-text="item.name"></p>
-                            <p v-html="'展期'+item.FExhibitionBTime "></p>
-                            <h5><span></span><span v-text="item.FPlace"></span></h5>
-                        </div>
-                        <div class="col-45"><img width="100%" height="116px" :src="item.FContentCover"></div>
-                    </a>
-                </li>
-            </ul>
         </div>
     </div>
 </div>

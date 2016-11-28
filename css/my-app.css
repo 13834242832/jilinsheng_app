@@ -29,19 +29,24 @@ a{
     background-size:100% 100%;
 }
 .index .top1{
-    height:30vh;
-    margin:0.7rem 0;
+    height:1.3rem;
 }
 .index .top2{
-    height:16vh;
-    margin:0.5rem 0;
+    height:1.053rem;
+    margin-top:0.089rem;
 }
 .navbar{
     background:url("../img/index/nav-bar.png") no-repeat;
     background-size:100% 100%;
+    height:0.435rem;
 }
 .navbar .navbar-inner .center{
-    font-size:24px;
+    font-size:0.16rem;
+}
+.toolbar{
+    background:#c3ab82;
+    height:0.293rem;
+    font-size:0.098rem;
 }
 .keygroup{
     position:absolute;
@@ -256,22 +261,23 @@ top:156px;
 
 }
 .museum_msg a>p{
-    font-size:18px;
+    font-size:0.098rem;
     color:#0c0c0c;
-    height:50px;
+    height:0.2844rem;
     border-bottom: 1px solid #cfa972;
 }
 .museum_msg a>p span{
-    line-height:50px;
-    padding-left:10px;
+    line-height:0.2844rem;
+    padding-left:0.045rem;
 }
 .museum_msg a>p i{
     display:inline-block;
     position:relative;
-    top:8px;
-    width:78px;
-    height:29px;
+    top:0.063rem;
+    width:0.347rem;
+    height:0.13rem;
     background:url("../img/museum_details_icons_0.png") no-repeat;
+    background-size:100% 100%;
 }
 .museum_msg>div{
     color:#a6a4a4;

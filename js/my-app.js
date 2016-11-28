@@ -287,7 +287,37 @@ myApp.onPageInit('appreciate',function (page) {
     });
 })
 myApp.onPageInit('collection_details',function (page) {
-    var mySwiper = myApp.swiper('.swiper-container', {
-        pagination:'.swiper-pagination'
+
+})
+myApp.onPageInit('more_collection',function (page) {
+    // Dependent values
+    var carVendors = {
+        全部 : ['全部'],
+        藏品分类 : ['Audi', 'BMW', 'Mercedes', 'Volkswagen', 'Volvo'],
+        藏品年代 : ['Cadillac', 'Chrysler', 'Dodge', 'Ford']
+    };
+    var pickerDependent = myApp.picker({
+        input: '#collection_key1',
+        rotateEffect: true,
+        formatValue: function (picker, values) {
+            return values[1];
+        },
+        cols: [
+            {
+                textAlign: 'left',
+                values: ['全部', '藏品分类', '藏品年代'],
+                onChange: function (picker, country) {
+                    if(picker.cols[1].replaceValues){
+                        picker.cols[1].replaceValues(carVendors[country]);
+                        console.log(picker.value[0],picker.value[1])
+                    }
+                }
+            },
+            {
+                values: carVendors["全部"],
+                width: 160,
+            },
+        ]
     });
 })
+
