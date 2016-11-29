@@ -39,7 +39,7 @@ myApp.onPageInit('museum', function (page) {
     //
     //     }
     // });
-    $(".jb,.dq,.lb").css("top","0.435rem")
+    $(".jb,.dq,.lb").css("top","0.6927rem")
     localStorage.setItem("museum_index_jb",$(".jb-active").html());
     localStorage.setItem("museum_index_dq",$(".dq-active").html());
     localStorage.setItem("museum_index_lb",$(".lb-active").html());
@@ -105,19 +105,19 @@ myApp.onPageInit('museum', function (page) {
                 console.log(datas);
                 var myList=myApp.virtualList($$(page.container).find('.virtual-list'),{
                     items:datas,
-                    template:'<li class="col-100">'+
+                    template:'<li class="col-100 sql">'+
                         '<a href="museum_details.html?ID={{MID}}">'+
                             '<h4 class="col-100">{{FMuseumName}}</h4>'+
-                            '<p style="margin:0">开放时间:<span>{{KFSJ}}</span></p>'+
+                            '<p style="margin:0;font-size:0.08rem;color:#a6a6a6;">开放时间:<span>{{KFSJ}}</span></p>'+
                             '<div style="position: relative">'+
-                            '<img src="{{PicPhoto1}}" width="100%" height="247px">'+
+                            '<img src="{{PicPhoto1}}" width="100%" style="height:1.0977rem">'+
                             '<span class="museum-msg museum-dq"><i></i><u>{{FProvince}}</u></span>'+
                             '<span class="museum-msg museum-lb"><i></i><u>{{FMType}}</u></span>'+
                             '<span class="museum-msg museum-jb"><i></i><u>{{FMLevel}}</u></span>'+
                             '</div>'+
                         '</a>'+
                 '</li>',
-                    height:340
+                    height:parseFloat($("html").css("font-size"))
                 });
             },
             complete:function(){
@@ -129,9 +129,6 @@ myApp.onPageInit('museum', function (page) {
 
 });
 myApp.onPageInit('museum_details', function (page) {
-    var mySwiper = myApp.swiper('.swiper-container', {
-        pagination:'.swiper-pagination'
-    });
     var result={"MID":page.query.ID,"meth":"getMuseumDetail"};
     $.ajax({
         type:'POST',
@@ -144,8 +141,7 @@ myApp.onPageInit('museum_details', function (page) {
         },
         success:function(json){
             var datas=eval("("+json+")");
-            console.log(datas);
-            var myList=new Vue({
+            var listm=new Vue({
                 el:"#museum_details",
                 data:{
                     data:datas[0],
@@ -155,6 +151,9 @@ myApp.onPageInit('museum_details', function (page) {
             })
         },
         complete:function(){
+            var mySwiper = myApp.swiper('.swiper-container', {
+                pagination:'.swiper-pagination'
+            });
             layer.closeAll('loading');
         }
     })
@@ -249,7 +248,7 @@ myApp.onPageInit('museum_brief', function (page) {
 myApp.onPageInit('museum_collection', function (page) {
 })
 myApp.onPageInit('digitization_more', function (page) {
-    $(".jb,.dq").css("top","0.435rem")
+    $(".jb,.dq").css("top","0.6927rem")
     // localStorage.setItem("museum_index_jb",$(".jb-active").html());
     // localStorage.setItem("museum_index_dq",$(".dq-active").html());
     // localStorage.setItem("museum_index_lb",$(".lb-active").html());
@@ -339,6 +338,34 @@ myApp.onPageInit('more_collection',function (page) {
                 width: 160,
             },
         ]
+    });
+})
+myApp.onPageInit('information',function (page) {
+    $.ajax({
+        type:'POST',
+        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getInformation",
+        dataType:"text",
+        data:{"meth":"TextAcademicShow"},
+        beforeSend:function(){
+            layer.load(2,{shade: [0.3,'#000']});
+        },
+        success:function(json){
+            var datas=eval("("+json+")");
+            datas=datas[0];
+            console.log(datas);
+            var a=new Vue({
+                el:"#information",
+                data:{
+                    data:datas
+                },
+            })
+        },
+        complete:function(){
+            layer.closeAll('loading');
+            var mySwiper = myApp.swiper('.swiper-container', {
+                pagination:'.swiper-pagination'
+            });
+        }
     });
 })
 

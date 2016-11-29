@@ -50,15 +50,16 @@ a{
 }
 .keygroup{
     position:absolute;
-    height:0.1244rem;
+    height:0.2577rem;
     text-align: center;
     border-bottom: 1px solid #eee;
     top:0.431rem;
     background:#fff;
     z-index: 1000;
+    font-size: 0.1244rem;
 }
 .keygroup .key-common{
-    line-height: 0.1244rem;
+    line-height: 0.2577rem;
     border-right:1px solid #eee;
 }
 .search-pic{
@@ -141,46 +142,41 @@ a{
 }
 /*博物馆一览*/
 .museum-list li{
-    height:335px;
-    padding:0 20px;
-    margin:10px 0;
+    margin:0.0444rem 0;
     background:#fff;
 }
 .museum-list h4{
     margin:0;
-    padding-top:5px;
     font-weight:normal;
-    font-size:24px;
     display:block;
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;}
 /*博物馆一览*/
-.museum-list{
-    /*padding:0 20px;*/
-}
 .museum-list li{
-    height:330px;
-    padding:10px 20px;
+    height:1.4666rem;
+    padding:0.0444rem 0.0888rem;
 }
 .museum-list h4{
     margin:0;
     font-weight:normal;
-    font-size:20px;
+    color:#1a1919;
+    font-size:0.1066rem;
 }
 .museum-msg i{
     display: inline-block;
     position:relative;
-    top:7px;
-    width:11px;
-    height:20px;
+    top:0.0211rem;
+    width:0.04888rem;
+    height:0.0888rem;
     background:url("../img/index/sj.png") 0px 0px no-repeat;
+    background-size:100% 100%;
 }
 .museum-msg u{
     display: inline-block;
     color:#fff;
-    height: 20px;
-    font-size:12px;
+    height: 0.0888rem;
+    font-size:0.0622rem;
     text-decoration:none;
     background:rgba(0,0,0,0.53);
 }
@@ -190,20 +186,13 @@ a{
     right:0;
 }
 .museum-dq{
-    top:90px;
+    top:0.4rem;
 }
 .museum-lb{
-    top:114px;
+    top:0.5333rem;
 }
 .museum-jb{
-    top:138px;
-top:156px;
-}
-.museum-lb{
-    top:120px;
-}
-.museum-jb{
-    top:150px;
+    top:0.6666rem;
 }
 /*博物馆详情页*/
 .museum_img{
@@ -215,14 +204,15 @@ top:156px;
 }
 .icons_group li{
     float:left;
+    height:0.6rem;
     border-right:1px solid #cfa972;
-    padding-top:22px;
+    padding-top:0.0977rem;
     background:#fff;
 }
 .icons_group li div{
-    width:62px;
-    height:62px;
-    margin:0 auto 10px;
+    width:0.2755rem;
+    height:0.2755rem;
+    margin:0 auto 0.0844rem;
 }
 .icons_group li:first-child div{
     background:url("../img/museum_details_icons.png") no-repeat;
