@@ -1,4 +1,4 @@
-<div data-page="digitization" class="page cached">
+<div data-page="digitization" class="page cached" id="digitization">
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left col-25"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
@@ -6,14 +6,11 @@
             <div class="right"><a href="museum_search.html" class="link icon-only"><i class="material-icons">search</i></a></div>
         </div>
     </div>
-    <div class='page-content'>
+    <div class='page-content' style="padding-top:0.435rem">
         <div class="museum_img">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="img/数字博物馆banner.png" width="100%" style="min-height:247px"></div>
-                    <div class="swiper-slide"><img src="img/数字博物馆banner.png" width="100%" style="min-height:247px"></div>
-                    <div class="swiper-slide"><img src="img/数字博物馆banner.png" width="100%" style="min-height:247px"></div>
-                    <div class="swiper-slide"><img src="img/数字博物馆banner.png" width="100%" style="min-height:247px"></div>
+                    <div class="swiper-slide" v-for="item in data.Banner"><img :src="item.FPicAddress" width="100%" height="100%"></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -24,41 +21,12 @@
         <div class="digitization_list">
             <div class="row col-100 list-block virtual-list" style="margin:0">
                 <ul class="row col-100 no-gutter">
-                    <li class="col-50">
-                        <a href="digization_details.html">
-                            <img src="img/博物院代表图.png" width="100%" min-height="150">
-                            <h5>吉林省博物院</h5>
-                            <p>三维虚拟漫游<span style="padding-left:10px">评分：4.5分</span></p>
+                    <li class="col-50" v-for="item in data.Hot3dM">
+                        <a :href="'digization_details.html?ID='+item.FGUID">
+                            <img :src="item.FPic" width="100%" style="height:0.7511rem">
+                            <h5 v-text="item.FName"></h5>
+                            <p>三维虚拟漫游<span style="padding-left:10px" v-html="'评分：'+item.FPM+'分'"></span></p>
                         </a>
-
-                    </li><li class="col-50">
-                        <img src="img/博物院代表图.png" width="100%" min-height="150">
-                        <h5>吉林省博物院</h5>
-                        <p>三维虚拟漫游<span style="padding-left:10px">评分：4.5分</span></p>
-                    </li><li class="col-50">
-                        <img src="img/博物院代表图.png" width="100%" min-height="150">
-                        <h5>吉林省博物院</h5>
-                        <p>三维虚拟漫游<span style="padding-left:10px">评分：4.5分</span></p>
-                    </li><li class="col-50">
-                        <img src="img/博物院代表图.png" width="100%" min-height="150">
-                        <h5>吉林省博物院</h5>
-                        <p>三维虚拟漫游<span style="padding-left:10px">评分：4.5分</span></p>
-                    </li><li class="col-50">
-                        <img src="img/博物院代表图.png" width="100%" min-height="150">
-                        <h5>吉林省博物院</h5>
-                        <p>三维虚拟漫游<span style="padding-left:10px">评分：4.5分</span></p>
-                    </li><li class="col-50">
-                        <img src="img/博物院代表图.png" width="100%" min-height="150">
-                        <h5>吉林省博物院</h5>
-                        <p>三维虚拟漫游<span style="padding-left:10px">评分：4.5分</span></p>
-                    </li><li class="col-50">
-                        <img src="img/博物院代表图.png" width="100%" min-height="150">
-                        <h5>吉林省博物院</h5>
-                        <p>三维虚拟漫游<span style="padding-left:10px">评分：4.5分</span></p>
-                    </li><li class="col-50">
-                        <img src="img/博物院代表图.png" width="100%" min-height="150">
-                        <h5>吉林省博物院</h5>
-                        <p>三维虚拟漫游<span style="padding-left:10px">评分：4.5分</span></p>
                     </li>
                 </ul>
             </div>
