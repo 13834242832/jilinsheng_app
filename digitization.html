@@ -1,9 +1,9 @@
-<div data-page="digitization" class="page cached" id="digitization">
+<div data-page="digitization" class="page" id="digitization">
     <div class="navbar">
         <div class="navbar-inner">
-            <div class="left col-25"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+            <div class="left col-25"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars" style="width:0.16rem;height:0.16rem"></i></a></div>
             <div class="center col-50" style='text-align: center'>数字博物馆</div>
-            <div class="right"><a href="museum_search.html" class="link icon-only"><i class="material-icons">search</i></a></div>
+            <div class="right"><a href="museum_search.html" class="link icon-only"><i class="material-icons" style="font-size:0.16rem">search</i></a></div>
         </div>
     </div>
     <div class='page-content' style="padding-top:0.435rem">
@@ -16,14 +16,14 @@
             </div>
         </div>
         <div class="row museum_msg museum_zx">
-            <a href="digitization_more.html" class="col-100 row"><p class="col-100" style="position:relative;border:none"><i></i><span>热门虚拟博物馆</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
+            <a href="digitization_more.html" class="col-100 row"><p class="col-100" style="position:relative;border:none"><i></i><span>热门虚拟博物馆</span><i class="icon icon-next" style="width:0.1422rem;height:0.1422rem;border-radius: 50%;background-color:#c5ae7b;position:absolute;right:0.0444rem;top:0.0711rem"></i></p></a>
         </div>
         <div class="digitization_list">
             <div class="row col-100 list-block virtual-list" style="margin:0">
                 <ul class="row col-100 no-gutter">
                     <li class="col-50" v-for="item in data.Hot3dM">
                         <a :href="'digization_details.html?ID='+item.FGUID">
-                            <img :src="item.FPic" width="100%" style="height:0.7511rem">
+                            <img :src="item.FPic" style="width:1.2444rem;height:0.7511rem">
                             <h5 v-text="item.FName"></h5>
                             <p>三维虚拟漫游<span style="padding-left:10px" v-html="'评分：'+item.FPM+'分'"></span></p>
                         </a>

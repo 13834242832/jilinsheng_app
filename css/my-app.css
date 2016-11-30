@@ -212,32 +212,15 @@ a{
 .icons_group li div{
     width:0.2755rem;
     height:0.2755rem;
-    margin:0 auto 0.0844rem;
-}
-.icons_group li:first-child div{
-    background:url("../img/museum_details_icons.png") no-repeat;
-}
-.icons_group li:nth-child(2) div{
-    background:url("../img/museum_details_icons.png") -62px 0px no-repeat;
-}
-.icons_group li:nth-child(3) div{
-    background:url("../img/museum_details_icons.png") -124px 0 no-repeat;
-}
-.icons_group li:nth-child(4) div{
-    background:url("../img/museum_details_icons.png") -186px 0 no-repeat;
-}
-.icons_group li:nth-child(5) div{
-    background:url("../img/museum_details_icons.png") -246px 0 no-repeat;
+    margin:0 auto 0.06rem;
 }
 .icons_group li p{
     color:#0c0c0c;
-    font-size:18px;
-    padding-bottom:6px;
+    font-size:0.0977rem;
     text-align: center;
 }
 .museum_msg{
-    height:185px;
-    margin-top:10px;
+    margin-top:0.0444rem;
     background:#fff;
     box-shadow:0 4px 4px 0 #e2dac8;
 
@@ -263,39 +246,37 @@ a{
 }
 .museum_msg>div{
     color:#a6a4a4;
+    font-size:0.08rem;
 }
 .museum_msg>div div{
-    margin-bottom: 5px;
+    margin-bottom: 0.0533rem;
 }
 .guide{
-    margin-top:10px;
+    margin-top:0.0444rem;
     background:#fff;
     box-shadow:0 4px 4px 0 #e2dac8;
 }
 .guide a p{
     margin: 0 auto;
-    font-size:15px;
-    height:63px;
+    font-size:0.08rem;
+    height:0.28rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .guide a p span{
-    line-height:63px;
-}
-.museum_xn{
-    height:331px;
+    line-height:0.28rem;
 }
 .museum_xn h4{
     color:#464544;
-    margin-top:10px;
-    font-size:18px;
+    margin-top:0.0444rem;
+    font-size:0.08rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .museum_xn div p{
-    font-size:16px;
+    font-size:0.0711rem;
     color:#a6a4a4;
     white-space: nowrap;
     overflow: hidden;
@@ -308,35 +289,35 @@ a{
     border-bottom: 1px solid #cfa972;
 }
 .museum_zx ul li p{
-    font-size:16px;
     color:#464544;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.museum_zx ul li h5{
-    color:#a6a4a4;
-    font-size:16px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 /*数字博物馆*/
 .digitization_list{
-    margin-top: 10px;
+    margin-top:0.0444rem;
     background:#fff;
-    padding:0px 20px 0;
+    padding:0px 0.0888rem 0;
+}
+.digitization_list ul::before{
+    background:transparent;
 }
 .digitization_list ul li{
-    padding:14px 10px 10px;
+    padding:0.0622rem 0 0.0444rem 0.1422rem;
     border-bottom:1px solid rgba(0, 0, 0, 0.12); ;
 }
 .digitization_list ul li h5{
     font-weight: normal;
-    font-size:16px;
+    font-size:0.0888rem;
+    margin-top:0.0355rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .digitization_list ul li p{
-    font-size:14px;
+    margin-top:0.0355rem;
+    font-size:0.08rem;
     color:#a6a4a4;
 }
 .digitization_list ul li p span{
@@ -363,10 +344,10 @@ a.tab-link.active{
     margin-top:10px;
 }
 .museum_collection div ul li h3{
-    font-size:16px;
+    font-size:0.09777rem;
 }
 .museum_collection div ul li p{
-    font-size:14px;
+    font-size:0.0888rem;
     color:#a6a6a6;
 }
 .museum_collection>div{

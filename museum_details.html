@@ -10,7 +10,7 @@
         <button class="toolbar-inner button button-big" style="background-color:#ab9771;font-size:0.1333rem;height: 0.3555rem">预约
         </button>
     </div>
-    <div class="page-content" style="padding:0.435rem 0 0">
+    <div class="page-content" style="padding:0.435rem 0 0.3555rem 0">
         <div class="museum_img">
             <div class="swiper-container">
                 <div class="swiper-wrapper" v-for="item in data.photo">
@@ -23,74 +23,83 @@
             <ul class="row no-gutter">
                 <li class="col-20">
                     <a :href="url1+data.MID">
-                        <div></div>
+                        <div>
+                            <img src="img/精品.png" width="100%" height="100%">
+                        </div>
                         <p>馆藏精品</p>
                     </a>
                 </li>
                 <li class="col-20">
                     <a href="">
-                        <div></div>
+                        <div>
+                            <img src="img/文创.png" width="100%" height="100%">
+                        </div>
                         <p>文创产品</p>
                     </a>
                 </li>
                 <li class="col-20">
                     <a href="">
-                        <div></div>
+                        <div>
+                            <img src="img/普查文物.png" width="100%" height="100%">
+                        </div>
                         <p>普查文物</p>
                     </a>
                 </li>
                 <li  class="col-20">
                     <a href="">
-                        <div></div>
-                        <p>资讯学术</p>
+                        <div>
+                            <img src="img/资讯.png" width="100%" height="100%">
+                        </div>
+                        <p>资讯</p>
                     </a>
                 </li>
                 <li  class="col-20" style="border:none">
                     <a href="">
-                        <div></div>
+                        <div>
+                            <img src="img/学术.png" width="100%" height="100%">
+                        </div>
                         <p>学术</p>
                     </a>
                 </li>
             </ul>
         </div>
         <div class="row museum_msg">
-            <a href="museum_brief.html" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>基本信息与简介</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
-            <div style="padding:0 0.3822rem;" class="col-100 row no-gutter">
+            <a :href="'museum_brief.html?ID='+data.MID" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>基本信息与简介</span><i class="icon icon-next" style="width:0.1422rem;height:0.1422rem;border-radius: 50%;background-color:#c5ae7b;position:absolute;right:0.0444rem;top:0.0711rem"></i></p></a>
+            <div style="padding:0.0533rem 0.3822rem 0;" class="col-100 row no-gutter">
                 <div class="col-100 row"><p class="col-50">级别：<span v-text="data.FMLevel"></span></p><p class="col-50">类别：<span v-text="data.FMType"></span></p></div>
                 <div class="col-100 row"><p class="col-50">地区：<span v-text="data.DQ"></span></p><p class="col-50">门票：<span>免费</span></p></div>
                 <div class="col-100"><p>地址：<span v-text="data.FDetailAddress"></span></p></div>
                 <div class="col-100"><p>开放时间：<span v-text="data.Opentime"></span></p></div>
             </div>
         </div>
-        <div class="guide row">
-            <a href="museum_useful.html?ID=123" class="row col-100"><p class="col-80"><span>实用信息：参观指南、预约须知、服务设施... </span></p><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:relative;right:10px;top:20px"></i></a>
+        <div class="guide row" style="position:relative">
+            <a href="museum_useful.html?ID=123" class="row col-100"><p class="col-80"><span>实用信息：参观指南、预约须知、服务设施... </span></p><i class="icon icon-next" style="width:0.1422rem;height:0.1422rem;border-radius: 50%;background-color:#c5ae7b;position:absolute;right:0.0444rem;top:0.0711rem"></i></a>
         </div>
         <div class="row museum_msg museum_xn">
             <a href="" class="row col-100"><p class="col-100"><i></i><span>虚拟展厅</span></p></a>
-            <div class="col-100 row" style="padding:14px 20px 0 20px">
+            <div class="col-100 row" style="padding:0.08rem 0.0888rem 0.08rem">
                 <div class="col-50" v-for="item in data.mdetailsVR">
-                    <img :src="item.xnms_img_ur" width="100%" height="180px">
+                    <img :src="item.xnms_img_ur" style="width:1.4222rem;height:1.0444rem">
                     <h4 v-text="item.name"></h4>
-                    <p><span v-text="item.FStyle"></span><span style="margin-left:15px;" v-html="'评分：'+item.FScore+'分'"></span></p>
+                    <p><span v-text="item.FStyle"></span><span style="margin-left:0.0666rem;" v-html="'评分：'+item.FScore+'分'"></span></p>
                 </div>
-                <!--<div class="col-50">-->
-                    <!--<img src="img/红色印记.png"width="100%" height="180px">-->
-                    <!--<h4>红色印记</h4>-->
-                    <!--<p><span>全景漫游</span><span style="margin-left:15px;">评分：4.5</span></p>-->
-                <!--</div>-->
             </div>
         </div>
         <div class="row museum_msg museum_zx">
-            <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>展讯</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
-            <ul class="col-100"  style="padding:0 0 0 20px">
-                <li class="row no-gutter" style="padding:14px 0" v-for="item in data.text_academic">
-                    <a class="col-100 row">
-                    <div class="col-55" style="padding-top:20px;">
-                        <p v-text="item.name"></p>
-                        <p v-html="'展期'+item.FExhibitionBTime "></p>
-                        <h5><span></span><span v-text="item.FPlace"></span></h5>
-                    </div>
-                    <div class="col-45"><img width="100%" height="116px" :src="item.FContentCover"></div>
+            <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>展讯</span><i class="icon icon-next" style="width:0.1422rem;height:0.1422rem;border-radius: 50%;background-color:#c5ae7b;position:absolute;right:0.0444rem;top:0.0711rem"></i></p></a>
+            <ul class="museum_useful_list col-100 row" v-for="it in data.text_academic">
+                <li class="col-100 row no-gutter" style="margin:0">
+                    <a class="col-100 row" href="'information_show_details.html?ID='+it.id">
+                        <div class="col-50" style="padding:0.1055rem 0 0 0.1555rem;">
+                            <p style="font-size: 0.0978rem;" v-text="it.name">王羲之书画展</p>
+                            <p style="margin-top:0.03rem;font-size:0.0888rem">展期：<span v-text="it.FExhibitonETime"></span></p>
+                            <p style="margin-top:0.03rem;font-size:0.0888rem"><span>吉林省博物院</span><span v-text="it.FPlace">大法师的法师多</span></p>
+                        </div>
+                        <div class="col-50" style="padding:0.1511rem 0.44rem;">
+                            <div style="position:relative;overflow: hidden;width:0.76rem;height:0.3155rem">
+                                <img :src="it.FContentCover" style="margin:0 auto;height:0.3155rem;position:absolute;left:-0.35rem">
+                            </div>
+                        </div>
                     </a>
                 </li>
             </ul>

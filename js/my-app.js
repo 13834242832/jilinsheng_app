@@ -10,7 +10,6 @@ var $$ = Dom7;
 
 var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true,
-    domCache: true
 });
 // Show/hide preloader for remote ajax loaded pages
 // Probably should be removed on a production/local app
@@ -164,7 +163,7 @@ myApp.onPageInit('digitization', function (page) {
         url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getDigitalMuseum",
         dataType:"text",
         data:{"meth":"DigitalMuseum"},
-        cache:true,
+        async:false,
         beforeSend:function(){
             layer.load(2,{shade: [0.3,'#000']});
         },
@@ -198,9 +197,12 @@ myApp.onPageInit('digization_details', function (page) {
         url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getDigitalMuseum",
         dataType:"text",
         data:result,
-        cache:true,
-        beforeSend:function(){
-            layer.load(2,{shade: [0.3,'#000']});
+        async:false,
+        // beforeSend:function(){
+        //     layer.load(2,{shade: [0.3,'#000']});
+        // },
+        error:function(){
+            console.log(123)
         },
         success:function(json){
             var datas=eval("("+json+")");
@@ -213,9 +215,9 @@ myApp.onPageInit('digization_details', function (page) {
                 }
             })
         },
-        complete:function(){
-            layer.closeAll('loading');
-        }
+        // complete:function(){
+        //     layer.closeAll('loading');
+        // }
     });
     var a={
         "MID":page.query.ID,
@@ -244,38 +246,154 @@ myApp.onPageInit('digization_details', function (page) {
 myApp.onPageInit('museum_useful', function (page) {
 })
 myApp.onPageInit('museum_brief', function (page) {
+    var result={"MID":page.query.ID,"meth":"getMuseumDetail"};
+    $.ajax({
+        type:'POST',
+        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getMuseumList?meth=getMuseumDetail",
+        dataType:"text",
+        data:result,
+        cache:true,
+        beforeSend:function(){
+            layer.load(2,{shade: [0.3,'#000']});
+        },
+        success:function(json){
+            var datas=eval("("+json+")");
+            var listm=new Vue({
+                el:"#museum_brief",
+                data:{
+                    data:datas[0],
+                },
+            })
+        },
+        complete:function(){
+            layer.closeAll('loading');
+        }
+    })
 })
 myApp.onPageInit('museum_collection', function (page) {
+    $.ajax({
+        type:'POST',
+        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getCollectionAppreciation",
+        dataType:"text",
+        data:{"meth":"CollectionAppreciation"},
+        beforeSend:function(){
+            layer.load(2,{shade: [0.3,'#000']});
+        },
+        success:function(json){
+            var datas=eval("("+json+")");
+            datas=datas[0];
+            console.log(datas);
+            var a=new Vue({
+                el:"#museum_collection",
+                data:{
+                    data:datas
+                },
+            })
+        },
+        complete:function(){
+            layer.closeAll('loading');
+            var mySwiper = myApp.swiper('.swiper-container', {
+                pagination:'.swiper-pagination'
+            });
+        }
+    });
 })
 myApp.onPageInit('digitization_more', function (page) {
-    $(".jb,.dq").css("top","0.6927rem")
+    // $(".jb,.dq").css("top","0.6927rem")
     // localStorage.setItem("museum_index_jb",$(".jb-active").html());
     // localStorage.setItem("museum_index_dq",$(".dq-active").html());
     // localStorage.setItem("museum_index_lb",$(".lb-active").html());
-    $$(".key1").on("click",function(){
-        $$(".jb").toggleClass("museum-active");
-        $$(".dq").removeClass("museum-active");
-        $$(".lb").removeClass("museum-active");
-    })
-    $$(".jb li").on("click",function(e){
-        $(this).find(".item-title").addClass("jb-active").siblings().removeClass("jb-active");
-        localStorage.setItem("museum_index_jb",$(this).find(".item-title").html());
-        $(this).find("i").html("done");
-        $(this).siblings().find("i").html(" ");
-        $(".jb").removeClass("museum-active");
-        // showData();
-    });
-    $$(".key2").on("click",function(){
-        $$(".dq").toggleClass("museum-active");
-        $$(".lb").removeClass("museum-active");
-        $$(".jb").removeClass("museum-active");
-    })
-    $$(".dq li").on("click",function(e){
-        $(this).find(".item-title").addClass("dq-active").siblings().removeClass("dq-active");
-        localStorage.setItem("museum_index_dq",$(this).find(".item-title").html());
-        $(this).find("i").html("done");
-        $(this).siblings().find("i").html(" ");
-        $(".dq").removeClass("museum-active");
+    // $$(".key1").on("click",function(){
+    //     $$(".jb").toggleClass("museum-active");
+    //     $$(".dq").removeClass("museum-active");
+    //     $$(".lb").removeClass("museum-active");
+    //     showData();
+    // })
+    // $$(".jb li").on("click",function(e){
+    //     $(this).find(".item-title").addClass("jb-active").siblings().removeClass("jb-active");
+    //     localStorage.setItem("museum_index_jb",$(this).find(".item-title").html());
+    //     $(this).find("i").html("done");
+    //     $(this).siblings().find("i").html(" ");
+    //     $(".jb").removeClass("museum-active");
+    //     showData();
+    // });
+    // $$(".key2").on("click",function(){
+    //     $$(".dq").toggleClass("museum-active");
+    //     $$(".lb").removeClass("museum-active");
+    //     $$(".jb").removeClass("museum-active");
+    //     showData();
+    // })
+    // $$(".dq li").on("click",function(e){
+    //     $(this).find(".item-title").addClass("dq-active").siblings().removeClass("dq-active");
+    //     localStorage.setItem("museum_index_dq",$(this).find(".item-title").html());
+    //     $(this).find("i").html("done");
+    //     $(this).siblings().find("i").html(" ");
+    //     $(".dq").removeClass("museum-active");
+    //     showData();
+    // });
+    showData()
+    function showData(){
+        // $$('.virtual-list').html(" ")
+        var result={
+            // "FCity":localStorage.getItem("museum_index_dq"),
+            // "FMLevel":localStorage.getItem("museum_index_jb"),
+            // "FMType":localStorage.getItem("museum_index_lb"),
+            "meth":"DigitalMuseum"
+        }
+        $.ajax({
+            type:'POST',
+            url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getDigitalMuseum",
+            dataType:"text",
+            data:result,
+            cache:true,
+            async:false,
+            beforeSend:function(){
+                layer.load(2,{shade: [0.3,'#000']});
+            },
+            success:function(json){
+                var datas=eval("("+json+")");
+                console.log(datas);
+                var a=new Vue({
+                    el:"#digitization_more",
+                    data:{
+                        data:datas[0]
+                    },
+                })
+            },
+            complete:function(){
+                layer.closeAll('loading');
+            }
+        })
+    }
+
+})
+myApp.onPageInit('digization_details',function (page){
+    $.ajax({
+        type:'POST',
+        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getDigitalMuseum",
+        dataType:"text",
+        data:{"meth":"DigitalMuseumDetail","MID":page.query.ID},
+        async:false,
+        beforeSend:function(){
+            layer.load(2,{shade: [0.3,'#000']});
+        },
+        success:function(json){
+            var datas=eval("("+json+")");
+            datas=datas[0];
+            console.log(datas);
+            var a=new Vue({
+                el:"#digization_details",
+                data:{
+                    data:datas
+                },
+            })
+        },
+        complete:function(){
+            layer.closeAll('loading');
+            var mySwiper = myApp.swiper('.swiper-container', {
+                pagination:'.swiper-pagination'
+            });
+        }
     });
 })
 myApp.onPageInit('appreciate',function (page) {
@@ -283,6 +401,7 @@ myApp.onPageInit('appreciate',function (page) {
         type:'POST',
         url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getCollectionAppreciation",
         dataType:"text",
+        async:false,
         data:{"meth":"CollectionAppreciation"},
         beforeSend:function(){
             layer.load(2,{shade: [0.3,'#000']});

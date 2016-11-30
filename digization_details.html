@@ -2,30 +2,22 @@
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left col-25"><a href="#" class="back link icon-only"><i class="icon icon-back"></i></a></div>
-            <div class="center col-50" style='text-align: center'></div>
+            <div class="center col-50" style='text-align: center' v-text="data.popular[0].FName"></div>
             <div class="right"><a href="museum_search.html" class="link icon-only"><i class="material-icons">search</i></a></div>
         </div>
     </div>
-    <div class="toolbar toolbar-bottom" style="background:#c3ab82;height:80px;">
-        <div style="display:inline-block;">
-            <img src="img/想看.png" style="margin-top:26px;margin-left:39px;">
-            <div style="display:inline-block;margin-top:20px;">
-                <span style="font-size:22px">想去看</span>
-                <br>
-                <span style="color:#533f1a">152</span>
-            </div>
-        </div>
-        <div style="display:inline-block;">
-            <img src="img/已看过.png" style="margin-top:26px;margin-left:39px;">
-            <div style="display:inline-block;margin-top:20px;">
-                <span style="font-size:22px">已看过</span>
-                <br>
-                <span style="color:#533f1a">123</span>
-            </div>
-        </div>
-        <div>
-            <a style="display:inline-block;border-radius:4px;background:#5f512d;width:140px;height:40px">进入漫游</a>
-        </div>
+    <div class="toolbar toolbar-bottom" style="background:#c3ab82;height:0.3555rem;">
+            <!--<img src="img/想看.png" style="width:0.1511rem;height:0.1244rem;margin-top:0.1155rem;margin-left:0.1733rem;">-->
+            <!--<span style="font-size:0.0977rem">想去看</span>-->
+            <!--<br>-->
+            <!--<span style="color:#533f1a;font-size:0.0977rem">152</span>-->
+            <!--<img src="img/已看过.png" style="width:0.1511rem;height:0.1511rem;margin-top:0.1155rem;margin-left:0.1733rem;">-->
+            <!--<span style="font-size:0.0977rem">已看过</span>-->
+            <!--<br>-->
+            <!--<span style="color:#533f1a;font-size:0.0977rem">123</span>-->
+        <!--<div>-->
+            <!--<a style="display:inline-block;border-radius:4px;background:#5f512d;width:140px;height:40px">进入漫游</a>-->
+        <!--</div>-->
     </div>
     <div class="page-content" style="padding:0.435rem 0 0">
         <div class="museum_img" style="height:1.92rem">
@@ -39,7 +31,7 @@
         <div class="row museum_msg" style="height:auto">
             <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>简介</span></p></a>
             <div class="col-100 row no-gutter">
-                <p style="padding:8px 10px 8px 40px;"></p>
+                <p style="padding:0.0622rem 0.1111rem 0.0666rem 0.4755rem;font-size:0.07111rem" v-text="data.popular[0].FBrief"></p>
             </div>
         </div>
         <div class="row museum_msg" style="height:auto">
@@ -60,11 +52,17 @@
                         <i class="material-icons" style="font-size:12px">star</i>
                     </div>
                 </div>
-                <div class="col-100" style="height:56px;text-align: center;background:#ab9771;color:#fff;"><a style="line-height: 56px;color:#fff; font-size:14.5px;">查看全部<span></span>条评论</a></div>
+                <div class="col-100" style="font-size:0.0977rem;height:0.2311rem;text-align: center;background:#ab9771;color:#fff;">
+                    <a>
+                        <p style="width:100%;height:100%;color:#fff; font-size:0.0977rem">
+                            <span style="line-height:0.0977rem">查看全部<span></span>条评论</span>
+                        </p>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="row museum_msg museum_zx">
-            <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>热门虚拟博物馆</span><i class="icon icon-next" style="border-radius: 50%;background-color:#c5ae7b;position:absolute;right:10px;top:14px"></i></p></a>
+            <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>热门虚拟博物馆</span><i class="icon icon-next" style="width:0.1422rem;height:0.1422rem;border-radius: 50%;background-color:#c5ae7b;position:absolute;right:0.0444rem;top:0.0711rem"></i></p></a>
             <div class="row col-100 digitization_list" style="margin:0">
                 <div class="row col-100 list-block virtual-list" style="margin:0">
                     <ul class="row col-100 no-gutter">
