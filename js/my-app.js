@@ -424,7 +424,7 @@ myApp.onPageInit('appreciate',function (page) {
 myApp.onPageInit('collection_details',function (page) {
     $.ajax({
         type:'POST',
-        url:"http://192.168.0.117:8089/X5.2.7_TJBWG/getCollectionAppreciation",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getCollectionAppreciation",
         dataType:"text",
         async:false,
         data:{"meth":"CollectionDetail","MID":page.query.ID},
@@ -445,7 +445,7 @@ myApp.onPageInit('collection_details',function (page) {
     result=JSON.stringify(result);
     $.ajax({
         type:'post',
-        url:"http://123.56.50.236:8089/x5/TJBWG/Content/process/processor/getComment.j",
+        url:"http://123.56.50.236:8080/x5/TJBWG/Content/process/processor/getComment.j",
         dataType:'JSONP',
         jsonp: "jsoncallback",
         async:false,
@@ -532,7 +532,7 @@ myApp.onPageInit('more_collection',function (page) {
 myApp.onPageInit('collection_day', function (page) {
     $.ajax({
         type:'POST',
-        url:"http://192.168.0.117:8083/X5.2.7_TJBWG/getCollectionAppreciation",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getCollectionAppreciation",
         dataType:"text",
         async:false,
         data:{"meth":"OnePerMonth","MID":page.query.ID},
@@ -558,7 +558,7 @@ myApp.onPageInit('collection_day', function (page) {
 myApp.onPageInit('information',function (page) {
     $.ajax({
         type:'POST',
-        url:"http://192.168.0.117:8083/X5.2.7_TJBWG/getInformation",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getInformation",
         dataType:"text",
         async:false,
         data:{"meth":"getInformation"},
@@ -577,7 +577,7 @@ myApp.onPageInit('information',function (page) {
 myApp.onPageInit('information_show_details',function (page) {
     $.ajax({
         type:'POST',
-        url:"http://192.168.0.117:8083/X5.2.7_TJBWG/getInformation",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getInformation",
         dataType:"text",
         async:false,
         data:{"meth":"getInformation","MID":page.query.ID},

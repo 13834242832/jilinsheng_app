@@ -87,8 +87,8 @@
         </div>
         <div class="row museum_msg museum_zx">
             <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>展讯</span><i class="icon icon-next" style="width:0.1422rem;height:0.1422rem;border-radius: 50%;background-color:#c5ae7b;position:absolute;right:0.0444rem;top:0.0711rem"></i></p></a>
-            <ul class="museum_useful_list col-100 row">
-                <li class="col-100 row no-gutter" style="margin-top:0.0444rem;border:none" v-for="it in data.text_academic">
+            <ul class="museum_useful_list col-100 row" v-for="it in data.text_academic">
+                <li class="col-100 row no-gutter" style="margin:0">
                     <a class="col-100 row" :href="'information_show_details.html?ID='+it.id">
                         <div class="col-50" style="padding:0.1055rem 0 0 0.1555rem;">
                             <p style="font-size: 0.0978rem;" v-text="it.name">王羲之书画展</p>
