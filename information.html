@@ -1,4 +1,4 @@
-<div data-page="information" class="page">
+<div data-page="information" class="page  toolbar-fixed" id="information">
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left col-25"><a href="#" class="back link icon-only"><i class="icon icon-back"></i></a></div>
@@ -6,7 +6,7 @@
             <div class="right"></div>
         </div>
     </div>
-    <div class="toolbar tabbar museum_usefultabbar" style="background:#fff;margin-top:0.435rem;height: 0.2578rem">
+    <div class="toolbar tabbar museum_usefultabbar" style="background:#fff;margin-top:0.435rem;height:0.2578rem">
         <div class="toolbar-inner" style="font-size:0.1067rem;">
             <a href="#tab1" class="active tab-link" style="font-size:0.1067rem;">展览资讯</a>
             <a href="#tab2" class="tab-link" style="font-size:0.1067rem">博物馆快讯</a>
@@ -16,18 +16,20 @@
     </div>
     <div class="tabs-swipeable-wrap">
         <div class="tabs">
-            <div id="tab1" class="page-content tab active" style="margin-top:0.6928rem;padding-top:0">
-                <div class="list-block museum_useful_list" style="margin-top:0.0444rem">
-                    <ul class="row">
-                        <li class="col-100 row no-gutter">
-                            <a class="col-100 row" href="information_show_details.html?ID=123">
+            <div id="tab1" class="page-content tab active" style="padding-top:0.6928rem;">
+                <div class="content-block list-block museum_useful_list" style="overflow-y:scroll;margin-top:0.0444rem;padding:0">
+                    <ul class="museum_useful_list col-100 row">
+                        <li class="col-100 row no-gutter" style="margin:0;margin-bottom:0.0444rem;" v-for="it in data.textAcademicShow">
+                            <a class="col-100 row" :href="'information_show_details.html?ID='+it.MID">
                                 <div class="col-50" style="padding:0.1055rem 0 0 0.1555rem;">
-                                    <p style="font-size: 0.0978rem;">王羲之书画展</p>
-                                    <p style="margin-top:0.03rem;font-size:0.0888rem">展期：<span>2016-09</span></p>
-                                    <p style="margin-top:0.03rem;font-size:0.0888rem"><span>吉林省博物院</span><span>大法师的法师多</span></p>
+                                    <p style="font-size: 0.0978rem;white-space: nowrap;overflow:hidden;text-overflow:ellipsis;" v-text="it.name"></p>
+                                    <p style="margin-top:0.03rem;font-size:0.0888rem">展期：<span v-text="it.time"></span></p>
+                                    <p style="margin-top:0.03rem;font-size:0.0888rem;color:#999"><span v-text="it.LY"></span><span v-text="it.FPlace"></span></p>
                                 </div>
-                                <div class="col-50" style="padding:0.1511rem 0.44rem">
-                                    <img src="img/图22.png" style="margin:0 auto;width:0.76rem;height:0.3155rem">
+                                <div class="col-50" style="padding:0.1511rem 0.44rem;">
+                                    <div style="position:relative;overflow: hidden;width:0.76rem;height:0.3155rem">
+                                        <img :src="it.FContentCover" style="margin:0 auto;height:0.3155rem;position:absolute;left:-0.35rem">
+                                    </div>
                                 </div>
                             </a>
                         </li>

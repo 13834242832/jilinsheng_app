@@ -1,35 +1,20 @@
-<div data-page="collection_day" class="page">
+<div data-page="collection_day" class="page" id="collection_day">
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left col-25"><a href="#" class="back link icon-only"><i class="icon icon-back"></i></a></div>
-            <div class="center col-50" style='text-align: center'>吉林省博物院简介</div>
+            <div class="center col-50" style='text-align: center' >每月一品</div>
             <div class="right"></div>
         </div>
     </div>
     <div class="page-content" id="museum_details" style="padding:0.435rem 0 0">
         <div class="row museum_msg" style="height:auto">
-            <a href="#" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>战国虎符</span></p></a>
+            <a href="#" class="row col-100"><p class="col-100" style="position:relative"><i></i><span v-text="data.FTitle"></span></p></a>
             <div style="padding:0.0667rem 0.0889rem 0.2rem 0.0889rem">
                 <h6 style="padding-left:0.4rem;font-size:0.08rem;color:#0d0d0d;">
-                    <span>2016-07-20</span>
-                    <span>吉林省博物院</span>
+                    <span v-text="data.time"></span>
+                    <span v-text="data.MID"></span>
                 </h6>
-                <p style="font-size:14px;color:#0d0d0d;line-height:28px;text-indent:28px;">吉林省博物院，原名吉林省博物馆，1951年建馆，新馆位
-
-                    于长春市净月国家高新技术产业开发区永顺路1666号，建筑
-
-                    面积3.2万平方米，是直属于吉林省文化厅的国家一级博物
-
-                    馆。
-                    吉林省博物院是一座历史与艺术博物馆，有文物藏品12万
-
-                    余件，其中一级文物295件、二级文物3379件、三级文物
-
-                    14280件、其它文物近10万件。其中高句丽、渤海、辽金时期
-
-                    的文物以及中国历代书法绘画、东北抗日联军文物在全国占有
-
-                    重要地位。</p>
+                <p style="font-size:14px;color:#0d0d0d;line-height:28px;text-indent:28px;" v-html="data.FContent"></p>
             </div>
         </div>
     </div>
