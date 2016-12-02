@@ -175,38 +175,38 @@ myApp.onPageInit('digitization', function (page) {
     });
 
 });
-myApp.onPageInit('digization_details', function (page) {
-    var result={
-        "MID":page.query.ID,
-        "meth":"DigitalMuseumDetail"
-    }
-    $.ajax({
-        type:'POST',
-        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getDigitalMuseum",
-        dataType:"text",
-        data:result,
-        beforeSend:function(){
-            layer.load(2,{shade: [0.3,'#000']});
-        },
-        success:function(json){
-            var datas=eval("("+json+")");
-            datas=datas[0];
-            console.log(datas);
-            var list=new Vue({
-                el:"#digization_details",
-                data:{
-                    data:datas
-                }
-            })
-        },
-        complete:function(){
-            layer.closeAll('loading');
-        }
-    });
-    var a={
-        "MID":page.query.ID,
-    }
-})
+// myApp.onPageInit('digization_details', function (page) {
+//     var result={
+//         "MID":page.query.ID,
+//         "meth":"DigitalMuseumDetail"
+//     }
+//     $.ajax({
+//         type:'POST',
+//         url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getDigitalMuseum",
+//         dataType:"text",
+//         data:result,
+//         beforeSend:function(){
+//             layer.load(2,{shade: [0.3,'#000']});
+//         },
+//         success:function(json){
+//             var datas=eval("("+json+")");
+//             datas=datas[0];
+//             console.log(datas);
+//             var list=new Vue({
+//                 el:"#digization_details",
+//                 data:{
+//                     data:datas
+//                 }
+//             })
+//         },
+//         complete:function(){
+//             layer.closeAll('loading');
+//         }
+//     });
+//     var a={
+//         "MID":page.query.ID,
+//     }
+// })
 myApp.onPageInit('museum_brief', function (page) {
     var result={"MID":page.query.ID,"meth":"getMuseumDetail"};
     $.ajax({
@@ -294,7 +294,7 @@ myApp.onPageInit('digitization_more', function (page) {
 myApp.onPageInit('digization_details',function (page){
     $.ajax({
         type:'POST',
-        url:"http://192.168.0.117:8083/X5.2.7_TJBWG/getDigitalMuseum",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getDigitalMuseum",
         dataType:"text",
         data:{"meth":"DigitalMuseumDetail","MID":page.query.ID},
         beforeSend:function(){
@@ -310,8 +310,14 @@ myApp.onPageInit('digization_details',function (page){
                     data:datas
                 },
             })
+            $(".btn1").on("click",function(){
+                mainView.router.load({
+                    url:$(this).attr("name")
+                })
+            })
         },
         complete:function(){
+            layer.closeAll('loading');
             var mySwiper = myApp.swiper('.swiper-container', {
                 pagination:'.swiper-pagination'
             });
@@ -509,7 +515,7 @@ myApp.onPageInit('information',function (page) {
 myApp.onPageInit('information_show_details',function (page) {
     $.ajax({
         type:'POST',
-        url:"http://192.168.0.117:8083/X5.2.7_TJBWG/getInformation",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getInformation",
         dataType:"text",
         data:{"meth":"getInformation","MID":page.query.ID},
         beforeSend:function(){
