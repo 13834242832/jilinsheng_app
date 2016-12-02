@@ -20,7 +20,6 @@ if(current_url){
 };
 $$(document).on('ajaxStart', function (e) {
     if (e.detail.xhr.requestUrl.indexOf('autocomplete-languages.json') >= 0) {
-        // Don't show preloader for autocomplete demo requests
         return;
     }
     myApp.showIndicator();
@@ -32,29 +31,6 @@ $$(document).on('ajaxComplete', function (e) {
     myApp.hideIndicator();
 });
 myApp.onPageInit('museum', function (page) {
-    // $.ajax({
-    //     type:'POST',
-    //     url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getMuseumList",
-    //     dataType:"text",
-    //     data:{"meth":"getAllOptions"},
-    //     beforeSend:function(){
-    //         layer.load(2,{shade: [0.3,'#000']});
-    //     },
-    //     success:function(json){
-    //         var datas=eval("("+json+")");
-    //         console.log(datas);
-    //         var listm=new Vue({
-    //             el:"#museum_details",
-    //             data:{
-    //                 data:datas["museumOption"],
-    //             },
-    //         })
-    //     },
-    //     complete:function(){
-    //         layer.closeAll('loading');
-    //     }
-    //
-    // })
     $(".jb,.dq,.lb").css("top","0.6927rem")
     localStorage.setItem("museum_index_jb",$(".jb-active").html());
     localStorage.setItem("museum_index_dq",$(".dq-active").html());
@@ -285,38 +261,6 @@ myApp.onPageInit('museum_collection', function (page) {
     });
 })
 myApp.onPageInit('digitization_more', function (page) {
-    // $(".jb,.dq").css("top","0.6927rem")
-    // localStorage.setItem("museum_index_jb",$(".jb-active").html());
-    // localStorage.setItem("museum_index_dq",$(".dq-active").html());
-    // localStorage.setItem("museum_index_lb",$(".lb-active").html());
-    // $$(".key1").on("click",function(){
-    //     $$(".jb").toggleClass("museum-active");
-    //     $$(".dq").removeClass("museum-active");
-    //     $$(".lb").removeClass("museum-active");
-    //     showData();
-    // })
-    // $$(".jb li").on("click",function(e){
-    //     $(this).find(".item-title").addClass("jb-active").siblings().removeClass("jb-active");
-    //     localStorage.setItem("museum_index_jb",$(this).find(".item-title").html());
-    //     $(this).find("i").html("done");
-    //     $(this).siblings().find("i").html(" ");
-    //     $(".jb").removeClass("museum-active");
-    //     showData();
-    // });
-    // $$(".key2").on("click",function(){
-    //     $$(".dq").toggleClass("museum-active");
-    //     $$(".lb").removeClass("museum-active");
-    //     $$(".jb").removeClass("museum-active");
-    //     showData();
-    // })
-    // $$(".dq li").on("click",function(e){
-    //     $(this).find(".item-title").addClass("dq-active").siblings().removeClass("dq-active");
-    //     localStorage.setItem("museum_index_dq",$(this).find(".item-title").html());
-    //     $(this).find("i").html("done");
-    //     $(this).siblings().find("i").html(" ");
-    //     $(".dq").removeClass("museum-active");
-    //     showData();
-    // });
     showData()
     function showData(){
         var result={
