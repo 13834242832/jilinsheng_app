@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dd747f3b-86c6-41f6-a7a0-442f5b5fadc5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/digization_details.html" afterPath="$PROJECT_DIR$/digization_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/my-app.js" afterPath="$PROJECT_DIR$/js/my-app.js" />
     </list>
     <ignored path="jilinsheng_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -378,7 +376,7 @@
       <workItem from="1480611341076" duration="1675000" />
       <workItem from="1480659623809" duration="10406000" />
       <workItem from="1480675821468" duration="226000" />
-      <workItem from="1480676059742" duration="3115000" />
+      <workItem from="1480676059742" duration="3126000" />
     </task>
     <task id="LOCAL-00001" summary="11-18">
       <created>1479464577202</created>
@@ -485,11 +483,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480677147780</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="12-2">
+      <created>1480679360311</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1480679360311</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211517000" />
+    <option name="totallyTimeSpent" value="211528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
