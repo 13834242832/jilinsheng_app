@@ -3,7 +3,7 @@
         <div class="navbar-inner">
             <div class="left col-25"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars" style="width:0.16rem;height:0.16rem"></i></a></div>
             <div class="center col-50" style='text-align: center'>藏品鉴赏</div>
-            <div class="right"><a href="museum_search.html" class="link icon-only"><i class="material-icons" style="font-size:0.16rem">search</i></a></div>
+            <div class="right"><a href="" class="link icon-only"><i class="material-icons" style="font-size:0.16rem">search</i></a></div>
         </div>
     </div>
     <div class="page-content" style="padding:0.435rem 0 0">
@@ -16,19 +16,19 @@
             </div>
         </div>
         <div class="picsearch row">
-            <a href="" class="row col-100"><p class="col-80"><img src="img/search.png" ><span>以图搜图</span><small>藏品反向搜索是根据用户上传的藏品图片匹配相似的藏品</small></p></a>
+            <a href="" class="row col-100"><p class="col-80"><img src="img/search.png" style="width:0.1777rem;height:0.1777rem;margin-top:0.05333rem"><span>以图搜图</span><small>藏品反向搜索是根据用户上传的藏品图片匹配相似的藏品</small></p></a>
         </div>
         <div class="row museum_msg" style="height:auto">
             <a href="more_collection.html" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>镇馆之宝</span><i class="icon icon-next" style="width:0.1422rem;height:0.1422rem;border-radius: 50%;background-color:#c5ae7b;position:absolute;right:0.0444rem;top:0.0711rem"></i></p></a>
             <div class="row col-100 museum_collection">
                 <div class="col-100 list-block row" style="margin:0">
-                    <ul class="col-100 row" style="padding:0px 0.0444rem 0px" v-for="it in data.treasurejson">
-                        <li class="col-100 row" style="padding:0.0444rem 0px">
+                    <ul class="col-100 row" style="padding:0px 0.09777rem 0px" >
+                        <li class="col-100 row" style="padding:0.0888rem 0px" v-for="it in data.treasurejson">
                             <a class="col-100 row no-gutter" :href="'collection_details.html?ID='+it.FGUID" class="col-100 row">
-                                <div class="col-30">
+                                <div class="col-30" style="margin-bottom:0">
                                     <img :src="it.FPicAddress" style="height: 0.5911rem;width:0.8089rem">
                                 </div>
-                                <div class="col-70" style="margin-top:0.0444rem">
+                                <div class="col-70" style="margin-top:0.0444rem;margin-bottom:0">
                                     <h3 v-text="it.FCOLLECTIONCNAME"></h3>
                                     <p><span v-html="'收藏单位：'+it.MID"></span><span v-html="'类型：'+it.FCollectionType" style="padding-left:5px"></span></p>
                                     <p v-text="it.FSize"></p>
@@ -43,16 +43,16 @@
             <a href="" class="row col-100"><p class="col-100" style="position:relative"><i></i><span>三维藏品</span><i class="icon icon-next" style="width:0.1422rem;height:0.1422rem;border-radius: 50%;background-color:#c5ae7b;position:absolute;right:0.0444rem;top:0.0711rem"></i></p></a>
             <div class="row col-100 museum_collection">
                 <div class="col-100 list-block row" style="margin:0">
-                    <ul class="col-100 row" style="padding:0px 10px" v-for="it in data.get3djson">
-                        <li class="col-100 row" style="padding:10px 0px">
+                    <ul class="col-100 row" style="padding:0px 10px" >
+                        <li class="col-100 row" style="padding:10px 0px" v-for="it in data.get3djson">
                             <a :href="'collection_details.html?ID='+it.FGUID" class="col-100 row no-gutter">
                                 <div class="col-30">
                                     <img :src="it.FPicAddress" style="height: 0.5911rem;width:0.8089rem">
                                 </div>
-                                <div class="col-70 row" style="margin-top:10px">
+                                <div class="col-70 row">
                                     <h3 class="col-100" v-text="it.FCOLLECTIONCNAME"></h3>
                                     <p class="col-100" v-html="'收藏单位：'+it.MID"><span style="padding-left:5px" v-html="'类型：'+it.FCollectionType">类型：青铜器</span></p>
-                                    <p class="col-100">12*88*96</p>
+                                    <p class="col-100" v-text="it.FSize"></p>
                                 </div>
                             </a>
                         </li>

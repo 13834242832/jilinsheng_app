@@ -10,9 +10,14 @@ var $$ = Dom7;
 
 var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true,
+    sortable:false
 });
-// Show/hide preloader for remote ajax loaded pages
-// Probably should be removed on a production/local app
+var current_url=(location.href).split("=")[1];
+if(current_url){
+    mainView.router.load({
+        url:"museum_details.html?ID="+current_url
+    })
+};
 $$(document).on('ajaxStart', function (e) {
     if (e.detail.xhr.requestUrl.indexOf('autocomplete-languages.json') >= 0) {
         // Don't show preloader for autocomplete demo requests
@@ -28,16 +33,28 @@ $$(document).on('ajaxComplete', function (e) {
 });
 myApp.onPageInit('museum', function (page) {
     // $.ajax({
-    //     type:'GET',
-    //     url:"http://192.168.0.104:8080/X5.2.7_TJBWG/test",
+    //     type:'POST',
+    //     url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getMuseumList",
     //     dataType:"text",
-    //     async:false,
-    //     data:{"params":"list"},
+    //     data:{"meth":"getAllOptions"},
+    //     beforeSend:function(){
+    //         layer.load(2,{shade: [0.3,'#000']});
+    //     },
     //     success:function(json){
     //         var datas=eval("("+json+")");
-    //
+    //         console.log(datas);
+    //         var listm=new Vue({
+    //             el:"#museum_details",
+    //             data:{
+    //                 data:datas["museumOption"],
+    //             },
+    //         })
+    //     },
+    //     complete:function(){
+    //         layer.closeAll('loading');
     //     }
-    // });
+    //
+    // })
     $(".jb,.dq,.lb").css("top","0.6927rem")
     localStorage.setItem("museum_index_jb",$(".jb-active").html());
     localStorage.setItem("museum_index_dq",$(".dq-active").html());
@@ -92,10 +109,9 @@ myApp.onPageInit('museum', function (page) {
         }
         $.ajax({
             type:'POST',
-            url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getMuseumList?meth=getMuseumList",
+            url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getMuseumList?meth=getMuseumList",
             dataType:"text",
             data:result,
-            cache:true,
             beforeSend:function(){
                 layer.load(2,{shade: [0.3,'#000']});
             },
@@ -131,7 +147,7 @@ myApp.onPageInit('museum_details', function (page) {
     var result={"MID":page.query.ID,"meth":"getMuseumDetail"};
     $.ajax({
         type:'POST',
-        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getMuseumList?meth=getMuseumDetail",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getMuseumList?meth=getMuseumDetail",
         dataType:"text",
         data:result,
         cache:true,
@@ -150,9 +166,6 @@ myApp.onPageInit('museum_details', function (page) {
             })
         },
         complete:function(){
-            var mySwiper = myApp.swiper('.swiper-container', {
-                pagination:'.swiper-pagination'
-            });
             layer.closeAll('loading');
         }
     })
@@ -160,10 +173,9 @@ myApp.onPageInit('museum_details', function (page) {
 myApp.onPageInit('digitization', function (page) {
     $.ajax({
         type:'POST',
-        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getDigitalMuseum",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getDigitalMuseum",
         dataType:"text",
         data:{"meth":"DigitalMuseum"},
-        async:false,
         beforeSend:function(){
             layer.load(2,{shade: [0.3,'#000']});
         },
@@ -194,15 +206,11 @@ myApp.onPageInit('digization_details', function (page) {
     }
     $.ajax({
         type:'POST',
-        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getDigitalMuseum",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getDigitalMuseum",
         dataType:"text",
         data:result,
-        async:false,
-        // beforeSend:function(){
-        //     layer.load(2,{shade: [0.3,'#000']});
-        // },
-        error:function(){
-            console.log(123)
+        beforeSend:function(){
+            layer.load(2,{shade: [0.3,'#000']});
         },
         success:function(json){
             var datas=eval("("+json+")");
@@ -215,41 +223,19 @@ myApp.onPageInit('digization_details', function (page) {
                 }
             })
         },
-        // complete:function(){
-        //     layer.closeAll('loading');
-        // }
+        complete:function(){
+            layer.closeAll('loading');
+        }
     });
     var a={
         "MID":page.query.ID,
     }
-    // $.ajax({
-    //     type:'post',
-    //     url:"http://123.56.50.236:8080/x5/TJBWG/Content/process/processor/getComment.j",
-    //     dataType:'JSONP',
-    //     jsonp: "jsoncallback",
-    //     jsonpCallback:"success",
-    //     data:{"params":a},
-    //     success:function(json){
-    //         success(json);
-    //         function success(data){
-    //             data=data["sql1"];
-    //             var list=new Vue({
-    //                 el:"#pl_msg",
-    //                 data:{
-    //                     pl:data
-    //                 }
-    //             })
-    //         }
-    //     }
-    // });
-})
-myApp.onPageInit('museum_useful', function (page) {
 })
 myApp.onPageInit('museum_brief', function (page) {
     var result={"MID":page.query.ID,"meth":"getMuseumDetail"};
     $.ajax({
         type:'POST',
-        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getMuseumList?meth=getMuseumDetail",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getMuseumList?meth=getMuseumDetail",
         dataType:"text",
         data:result,
         cache:true,
@@ -273,7 +259,7 @@ myApp.onPageInit('museum_brief', function (page) {
 myApp.onPageInit('museum_collection', function (page) {
     $.ajax({
         type:'POST',
-        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getCollectionAppreciation",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getCollectionAppreciation",
         dataType:"text",
         data:{"meth":"CollectionAppreciation"},
         beforeSend:function(){
@@ -333,20 +319,14 @@ myApp.onPageInit('digitization_more', function (page) {
     // });
     showData()
     function showData(){
-        // $$('.virtual-list').html(" ")
         var result={
-            // "FCity":localStorage.getItem("museum_index_dq"),
-            // "FMLevel":localStorage.getItem("museum_index_jb"),
-            // "FMType":localStorage.getItem("museum_index_lb"),
             "meth":"DigitalMuseum"
         }
         $.ajax({
             type:'POST',
-            url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getDigitalMuseum",
+            url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getDigitalMuseum",
             dataType:"text",
             data:result,
-            cache:true,
-            async:false,
             beforeSend:function(){
                 layer.load(2,{shade: [0.3,'#000']});
             },
@@ -370,10 +350,9 @@ myApp.onPageInit('digitization_more', function (page) {
 myApp.onPageInit('digization_details',function (page){
     $.ajax({
         type:'POST',
-        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getDigitalMuseum",
+        url:"http://192.168.0.117:8083/X5.2.7_TJBWG/getDigitalMuseum",
         dataType:"text",
         data:{"meth":"DigitalMuseumDetail","MID":page.query.ID},
-        async:false,
         beforeSend:function(){
             layer.load(2,{shade: [0.3,'#000']});
         },
@@ -389,7 +368,6 @@ myApp.onPageInit('digization_details',function (page){
             })
         },
         complete:function(){
-            layer.closeAll('loading');
             var mySwiper = myApp.swiper('.swiper-container', {
                 pagination:'.swiper-pagination'
             });
@@ -399,9 +377,8 @@ myApp.onPageInit('digization_details',function (page){
 myApp.onPageInit('appreciate',function (page) {
     $.ajax({
         type:'POST',
-        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getCollectionAppreciation",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getCollectionAppreciation",
         dataType:"text",
-        async:false,
         data:{"meth":"CollectionAppreciation"},
         beforeSend:function(){
             layer.load(2,{shade: [0.3,'#000']});
@@ -426,10 +403,84 @@ myApp.onPageInit('appreciate',function (page) {
     });
 })
 myApp.onPageInit('collection_details',function (page) {
-
+    $.ajax({
+        type:'POST',
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getCollectionAppreciation",
+        dataType:"text",
+        data:{"meth":"CollectionDetail","MID":page.query.ID},
+        beforeSend:function(){
+            layer.load(2,{shade: [0.3,'#000']});
+        },
+        success:function(json){
+            var datas=eval("("+json+")");
+            datas=datas[0];
+            var a=new Vue({
+                el:"#collection_details",
+                data:{
+                    data:datas
+                },
+            })
+        },
+        complete:function(){
+            layer.closeAll('loading');
+            var mySwiper = myApp.swiper('.swiper-container', {
+                pagination:'.swiper-pagination'
+            });
+        }
+    });
+    var result={
+        "MID":page.query.ID
+    }
+    result=JSON.stringify(result);
+    $.ajax({
+        type:'post',
+        url:"http://123.56.50.236:8080/x5/TJBWG/Content/process/processor/getComment.j",
+        dataType:'JSONP',
+        jsonp: "jsoncallback",
+        async:false,
+        jsonpCallback:"success",
+        data:{"params":result},
+        success:function(json){
+            success(json);
+            function success(data){
+                var data1=data["sql1"];
+                var data2=data["sql2"][0];
+                for(var k=0;k<3;k++){
+                    $("#pl").append("<div class='col-100' style='margin:0.045rem 0 0.045rem 0.33rem'><p style='font-size:0.089rem;color:#404040;'>"+data1[k].FUSERNAME+"</p><p style='font-size:0.08rem'>"+data1[k].FCOMMENTCONTENT+"</p></div>")
+                }
+                $("#count_msg").html(data2.COUNT)
+            }
+        }
+    });
 })
 myApp.onPageInit('more_collection',function (page) {
-    // Dependent values
+    $.ajax({
+        type:'POST',
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getCollectionAppreciation",
+        dataType:"text",
+        async:false,
+        data:{"meth":"CollectionAppreciation"},
+        beforeSend:function(){
+            layer.load(2,{shade: [0.3,'#000']});
+        },
+        success:function(json){
+            var datas=eval("("+json+")");
+            datas=datas[0];
+            console.log(datas);
+            var a=new Vue({
+                el:"#more_collection",
+                data:{
+                    data:datas
+                },
+            })
+        },
+        complete:function(){
+            layer.closeAll('loading');
+            var mySwiper = myApp.swiper('.swiper-container', {
+                pagination:'.swiper-pagination'
+            });
+        }
+    });
     var carVendors = {
         全部 : ['全部'],
         藏品分类 : ['Audi', 'BMW', 'Mercedes', 'Volkswagen', 'Volvo'],
@@ -459,12 +510,12 @@ myApp.onPageInit('more_collection',function (page) {
         ]
     });
 })
-myApp.onPageInit('information',function (page) {
+myApp.onPageInit('collection_day', function (page) {
     $.ajax({
         type:'POST',
-        url:"http://123.56.50.236:8088/X5.2.7_TJBWG/getInformation",
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getCollectionAppreciation",
         dataType:"text",
-        data:{"meth":"TextAcademicShow"},
+        data:{"meth":"OnePerMonth","MID":page.query.ID},
         beforeSend:function(){
             layer.load(2,{shade: [0.3,'#000']});
         },
@@ -473,7 +524,58 @@ myApp.onPageInit('information',function (page) {
             datas=datas[0];
             console.log(datas);
             var a=new Vue({
+                el:"#collection_day",
+                data:{
+                    data:datas
+                },
+            })
+        },
+        complete:function(){
+            layer.closeAll('loading');
+        }
+    });
+})
+myApp.onPageInit('information',function (page) {
+    $.ajax({
+        type:'POST',
+        url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getInformation",
+        dataType:"text",
+        data:{"meth":"getInformation"},
+        beforeSend:function(){
+            layer.load(2,{shade: [0.3,'#000']});
+        },
+        success:function(json){
+            var datas=eval("("+json+")");
+            console.log(datas);
+            var a=new Vue({
                 el:"#information",
+                data:{
+                    data:datas
+                },
+            })
+        },
+        complete:function(){
+            layer.closeAll('loading');
+            var mySwiper = myApp.swiper('.swiper-container', {
+                pagination:'.swiper-pagination'
+            });
+        }
+    });
+})
+myApp.onPageInit('information_show_details',function (page) {
+    $.ajax({
+        type:'POST',
+        url:"http://192.168.0.117:8083/X5.2.7_TJBWG/getInformation",
+        dataType:"text",
+        data:{"meth":"getInformation","MID":page.query.ID},
+        beforeSend:function(){
+            layer.load(2,{shade: [0.3,'#000']});
+        },
+        success:function(json){
+            var datas=eval("("+json+")");
+            datas=datas['textAcademicShow'][0];
+            var a=new Vue({
+                el:"#information_show_details",
                 data:{
                     data:datas
                 },

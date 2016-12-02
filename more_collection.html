@@ -1,7 +1,7 @@
-<div data-page="more_collection" class="page">
+<div data-page="more_collection" class="page" id="more_collection">
     <div class="navbar">
         <div class="navbar-inner">
-            <div class="left col-25"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"  style="width:0.16rem;height:0.16rem"></i></a></div>
+            <div class="left col-25"><a href="#" class="back link icon-only"><i class="icon icon-back"></i></a></div>
             <div class="center col-50" style='text-align: center'>全部藏品</div>
             <div class="right"><a href="" class="link icon-only"><i class="material-icons" style="font-size:0.16rem">search</i></a></div>
         </div>
@@ -13,51 +13,16 @@
     <div class="page-content" style="padding-top:0.7105rem;">
         <div class="museum_collection">
             <div class="list-block row" style="margin:0">
-                <ul class="col-100 row" style="padding:0px 10px 0px">
-                    <li class="col-100 row" style="padding:10px 0px">
-                        <a href="collection_details.html" class="col-100 row">
-                            <div class="col-40">
-                                <img src="img/藏品.png" width="100%" min-height="120">
+                <ul class="col-100 row" style="padding:0px 0.0444rem 0px">
+                    <li class="col-100 row" style="padding:0.0888rem 0" v-for="it in data.treasurejson">
+                        <a :href="'collection_details.html?ID='+it.FGUID" class="col-100 row">
+                            <div class="col-30">
+                                <img :src="it.FPicAddress" style="width:0.8177rem;height:0.6rem">
                             </div>
-                            <div class="col-60 row" style="margin-top:10px">
-                                <h3 class="col-100">红山文化玉龙</h3>
-                                <p class="col-100">收藏单位：吉林省博物院<span style="padding-left:5px">类型：青铜器</span></p>
-                                <p class="col-100">12*88*96</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="col-100 row" style="padding:10px 0px">
-                        <a href="collection_details.html" class="col-100 row">
-                            <div class="col-40">
-                                <img src="img/藏品.png" width="100%" min-height="120">
-                            </div>
-                            <div class="col-60 row" style="margin-top:10px">
-                                <h3 class="col-100">红山文化玉龙</h3>
-                                <p class="col-100">收藏单位：吉林省博物院<span style="padding-left:5px">类型：青铜器</span></p>
-                                <p class="col-100">12*88*96</p>
-                            </div>
-                        </a>
-                    </li><li class="col-100 row" style="padding:10px 0px">
-                    <a href="collection_details.html" class="col-100 row">
-                        <div class="col-40">
-                            <img src="img/藏品.png" width="100%" min-height="120">
-                        </div>
-                        <div class="col-60 row" style="margin-top:10px">
-                            <h3 class="col-100">红山文化玉龙</h3>
-                            <p class="col-100">收藏单位：吉林省博物院<span style="padding-left:5px">类型：青铜器</span></p>
-                            <p class="col-100">12*88*96</p>
-                        </div>
-                    </a>
-                </li>
-                    <li class="col-100 row" style="padding:10px 0px">
-                        <a href="collection_details.html" class="col-100 row">
-                            <div class="col-40">
-                                <img src="img/藏品.png" width="100%" min-height="120">
-                            </div>
-                            <div class="col-60 row" style="margin-top:10px">
-                                <h3 class="col-100">红山文化玉龙</h3>
-                                <p class="col-100">收藏单位：吉林省博物院<span style="padding-left:5px">类型：青铜器</span></p>
-                                <p class="col-100">12*88*96</p>
+                            <div class="col-70 row" style="margin-top:0.0444rem">
+                                <h3 class="col-100" v-text="it.FCOLLECTIONCNAME"></h3>
+                                <p class="col-100">收藏单位：<span v-text="it.MID"></span><span style="padding-left:0.08rem" v-html="'类型：'+it.FCollectionType"></span></p>
+                                <p class="col-100" v-text="it.FSize"></p>
                             </div>
                         </a>
                     </li>
