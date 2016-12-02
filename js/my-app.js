@@ -158,7 +158,6 @@ myApp.onPageInit('digitization', function (page) {
         success:function(json){
             var datas=eval("("+json+")");
             datas=datas[0];
-            console.log(datas);
             var list=new Vue({
                 el:"#digitization",
                 data:{
@@ -175,38 +174,6 @@ myApp.onPageInit('digitization', function (page) {
     });
 
 });
-// myApp.onPageInit('digization_details', function (page) {
-//     var result={
-//         "MID":page.query.ID,
-//         "meth":"DigitalMuseumDetail"
-//     }
-//     $.ajax({
-//         type:'POST',
-//         url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getDigitalMuseum",
-//         dataType:"text",
-//         data:result,
-//         beforeSend:function(){
-//             layer.load(2,{shade: [0.3,'#000']});
-//         },
-//         success:function(json){
-//             var datas=eval("("+json+")");
-//             datas=datas[0];
-//             console.log(datas);
-//             var list=new Vue({
-//                 el:"#digization_details",
-//                 data:{
-//                     data:datas
-//                 }
-//             })
-//         },
-//         complete:function(){
-//             layer.closeAll('loading');
-//         }
-//     });
-//     var a={
-//         "MID":page.query.ID,
-//     }
-// })
 myApp.onPageInit('museum_brief', function (page) {
     var result={"MID":page.query.ID,"meth":"getMuseumDetail"};
     $.ajax({
@@ -303,18 +270,14 @@ myApp.onPageInit('digization_details',function (page){
         success:function(json){
             var datas=eval("("+json+")");
             datas=datas[0];
-            console.log(datas);
             var a=new Vue({
                 el:"#digization_details",
                 data:{
                     data:datas
-                },
+                }
             })
-            $(".btn1").on("click",function(){
-                mainView.router.load({
-                    url:$(this).attr("name")
-                })
-            })
+            var url_show=$(".btn1").attr("name");
+            localStorage.setItem("url_show",url_show);
         },
         complete:function(){
             layer.closeAll('loading');
@@ -323,6 +286,11 @@ myApp.onPageInit('digization_details',function (page){
             });
         }
     });
+})
+myApp.onPageInit('digization_show',function(page){
+    var url=localStorage.getItem("url_show");
+    console.log(url);
+    $("#url_show").attr("src",url+"/index.html");
 })
 myApp.onPageInit('appreciate',function (page) {
     $.ajax({
