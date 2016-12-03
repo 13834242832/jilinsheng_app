@@ -136,9 +136,8 @@ a{
 }
 /*左侧边栏*/
 .panel_left{
-    background:url("../img/index/panel-left-bg.png") no-repeat;
-    background-size:100% 100%;
     color:#fff;
+    background:#1b1711;
 }
 /*博物馆一览*/
 .museum-list li{

@@ -17,17 +17,19 @@
                 <p style="font-size:0.0977rem">已看过</p>
                 <p style="color:#533f1a;font-size:0.0977rem">865</p>
             </div>
-        <div style="float:right;margin-top:0.0888rem;margin-right:0.0888rem">
+        <div style="float:right;margin-top:0.025rem;margin-right:0.0888rem">
             <!--:href="'http://123.56.50.236:40/jilinsheng_app/'+-->
-            <a href="digization_show.html" :name="data.popular[0].FMobileUrl" class="button btn1" style="background:#5f512d;width:0.8888rem;height:0.1777rem;font-size:0.0977rem">
-                进入漫游</a>
+            <a href="digization_show.html" :name="data.popular[0].FMobileUrl" class="button btn1" style="background:#5f512d;width:0.8888rem;height:0.3rem;">
+                <span style="font-size:0.15rem;line-height: 0.3rem;">进入漫游</span></a>
         </div>
     </div>
     <div class="page-content" style="padding:0.435rem 0 0.3555rem 0">
         <div class="museum_img" style="height:1.92rem">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="it in data.banner3dM"><img :src="it.FPICADDRESS" width="100%"></div>
+                    <div class="swiper-slide" v-for="it in data.banner3dM">
+                        <img :src="it.FPICADDRESS" width="100%">
+                    </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>

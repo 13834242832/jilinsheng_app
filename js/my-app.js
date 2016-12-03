@@ -355,7 +355,6 @@ myApp.onPageInit('collection_details',function (page) {
         url:"http://123.56.50.236:8080/x5/TJBWG/Content/process/processor/getComment.j",
         dataType:'JSONP',
         jsonp: "jsoncallback",
-        async:false,
         jsonpCallback:"success",
         data:{"params":result},
         success:function(json){
@@ -376,7 +375,6 @@ myApp.onPageInit('more_collection',function (page) {
         type:'POST',
         url:"http://123.56.50.236:8089/X5.2.7_TJBWG/getCollectionAppreciation",
         dataType:"text",
-        async:false,
         data:{"meth":"CollectionAppreciation"},
         beforeSend:function(){
             layer.load(2,{shade: [0.3,'#000']});

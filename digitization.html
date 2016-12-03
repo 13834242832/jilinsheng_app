@@ -25,7 +25,7 @@
                         <a :href="'digization_details.html?ID='+item.FGUID">
                             <img :src="item.FPic" style="width:1.2444rem;height:0.7511rem">
                             <h5 v-text="item.FName"></h5>
-                            <p>三维虚拟漫游<span style="padding-left:10px" v-html="'评分：'+item.FPM+'分'"></span></p>
+                            <p><span v-text="item.FStyle"></span><span style="padding-left:10px" v-html="'评分：'+item.FScore+'分'"></span></p>
                         </a>
                     </li>
                 </ul>
